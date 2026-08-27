@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
     print("Aynı belge tekrar:", second_action)
 
-    # 3. Aynı belgenin içeriğinin değiştiğini simüle ediyoruz.
+    # 3. Aynı belgenin içeriğinin değiştiğini varsayıyoruz.
     changed_document = first_document.copy()
     changed_document["document_hash"] = "degismis_hash"
 
