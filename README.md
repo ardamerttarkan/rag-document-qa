@@ -104,3 +104,96 @@ Gerçek ekleme, silme ve yeniden indeksleme işlemleri Qdrant entegrasyonu sıra
 - Gerekli metadata alanlarının bütün chunk’larda bulunduğu kontrol edildi.
 - Chunk ID değerlerinin benzersiz olduğu doğrulandı.
 - `index`, `skip` ve `reindex` karar senaryoları başarıyla test edildi.
+
+## 4. Gün
+
+### Embedding Modelinin Kurulması
+
+Doküman parçalarının anlamsal olarak temsil edilebilmesi için `sentence-transformers` kütüphanesi ve `intfloat/multilingual-e5-small` embedding modeli kullanıldı.
+
+- Model CPU üzerinde çalıştırıldı.
+- Modelin ürettiği vektör boyutu 384 olarak doğrulandı.
+- Doküman parçalarının başına E5 modelinin beklediği `passage:` ön eki eklendi.
+- Chunk’lar toplu olarak işlenebilmesi için batch yapısı kullanıldı.
+- Vektörler cosine similarity ile kullanılmaya uygun olacak şekilde normalize edildi.
+
+### Embedding İşlemi
+
+Önceki gün oluşturulan doküman okuma ve chunking yapısı embedding sistemiyle birleştirildi.
+
+İşlem sırası:
+
+1. Doküman okundu ve temizlendi.
+2. Doküman belirlenen boyutlara göre chunk’lara ayrıldı.
+3. Her chunk’ın metni embedding modeline gönderildi.
+4. Her chunk için 384 boyutlu bir vektör üretildi.
+5. Üretilen vektörler chunk metadata bilgileriyle eşleştirildi.
+
+Her embedding kaydında aşağıdaki bilgiler korundu:
+
+- Doküman kimliği
+- Doküman hash değeri
+- Doküman adı
+- Sayfa numarası
+- Chunk kimliği
+- Chunk sırası
+- Bölüm başlığı
+- Chunk metni
+- 384 boyutlu embedding vektörü
+
+### Kontroller
+
+Embedding işlemi sonrasında aşağıdaki kontroller uygulandı:
+
+- Üretilen embedding sayısının chunk sayısıyla aynı olduğu kontrol edildi.
+- Her embedding vektörünün 384 boyutunda olduğu doğrulandı.
+- Vektörlerin geçerli ve sonlu sayılardan oluştuğu kontrol edildi.
+- Chunk metadata bilgilerinin embedding işleminden sonra korunduğu doğrulandı.
+
+### Performans Ölçümü
+
+pdf dosyası üzerinde yapılan test sonucunda:
+
+- Toplam chunk sayısı: 11
+- Batch size: 8
+- Kullanılan cihaz: CPU
+- Embedding shape: `(11, 384)`
+- Toplam embedding süresi: `0.342 saniye`
+- Chunk başına ortalama süre: `31.113 ms`
+- Saniyede işlenen chunk sayısı: `32.14`
+
+İlk çalıştırmada modelin indirilmesi ve yüklenmesi nedeniyle model yükleme süresi yaklaşık `59.637 saniye` olarak ölçüldü. Model dosyaları yerel önbelleğe kaydedildiği için sonraki çalıştırmalarda tekrar indirme yapılmasına gerek kalmadı.
+
+### Gün Sonu Çıktısı
+
+Dokümanlardan oluşturulan chunk’lar, 384 boyutlu anlamsal vektörlere dönüştürüldü. Böylece chunk’ların Qdrant vektör veritabanına kaydedilebilmesi ve anlamsal benzerlik aramasında kullanılabilmesi için gerekli embedding aşaması tamamlandı.
+
+## 5. Gün
+
+### Qdrant ile Vektör Kayıt ve Semantic Search
+
+Doküman chunk’larından üretilen embedding vektörlerinin saklanması için Qdrant bağlantısı oluşturuldu.
+
+- `rag_documents` adında bir collection oluşturuldu.
+- Collection, 384 boyutlu vektörler ve Cosine benzerlik yöntemiyle yapılandırıldı.
+- Her chunk; UUID, embedding vektörü ve payload bilgileriyle Qdrant’a kaydedildi.
+- Payload içerisinde chunk metni, doküman adı, sayfa numarası ve diğer metadata bilgileri korundu.
+- Upsert işlemi kullanılarak aynı dokümanın tekrar eklenmesi durumunda duplicate point oluşması engellendi.
+- İlk ve ikinci çalıştırmada collection içerisindeki point sayısının 11 kaldığı doğrulandı.
+
+### Retrieval İşlemi
+
+Kullanıcı sorularını embedding’e dönüştüren ve Qdrant üzerinde anlamsal arama yapan retrieval yapısı oluşturuldu.
+
+- Doküman metinlerinde `passage:` ön eki kullanıldı.
+- Kullanıcı sorularında `query:` ön eki kullanıldı.
+- Kullanıcıdan dinamik olarak soru alınması sağlandı.
+- En ilgili üç chunk’ın getirilmesi için Top-K değeri `3` olarak belirlendi.
+- Sonuçlarda benzerlik skoru, doküman adı, sayfa, chunk kimliği ve metin gösterildi.
+- Alakasız sonuçların filtrelenmesi için başlangıç skor eşiği `0.80` olarak ayarlandı.
+
+İlgili bir uyku sorusunda en yüksek benzerlik skoru `0.9070` olarak ölçüldü. Alakasız İstanbul sorusunda skor `0.7625` seviyesinde kaldı ve skor eşiği sayesinde sonuç gösterilmedi.
+
+### Gün Sonu Çıktısı
+
+LLM kullanılmadan çalışan retrieval sistemi tamamlandı. Kullanıcı soruları embedding vektörüne dönüştürülerek Qdrant içerisinde anlamsal olarak en yakın doküman parçalarının bulunması sağlandı.
