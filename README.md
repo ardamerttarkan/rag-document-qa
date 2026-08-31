@@ -197,3 +197,11 @@ Kullanıcı sorularını embedding’e dönüştüren ve Qdrant üzerinde anlams
 ### Gün Sonu Çıktısı
 
 LLM kullanılmadan çalışan retrieval sistemi tamamlandı. Kullanıcı soruları embedding vektörüne dönüştürülerek Qdrant içerisinde anlamsal olarak en yakın doküman parçalarının bulunması sağlandı.
+
+## 6. Gün – Yerel LLM Entegrasyonu
+
+Ollama üzerinden Qwen3 4B Instruct modeli yerel olarak çalıştırıldı. Qdrant’tan getirilen ilgili metin parçaları context hâline getirilerek modele gönderildi ve doküman içeriğine dayalı cevap üretimi sağlandı.
+
+Modelin kullandığı kaynakları belirtmesi ve dokümanda bulunmayan bilgiler için cevap üretmemesi amacıyla uygun prompt kuralları oluşturuldu. Alakasız sorular benzerlik eşiğiyle filtrelendi.
+
+Sistem `python3 app/rag.py` komutuyla çalıştırılabilir.
