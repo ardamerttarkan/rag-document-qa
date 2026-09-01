@@ -16,6 +16,11 @@ Kurallar:
 7. Bağlamda bulunmayan kaynak numaralarını kullanma.
 8. Türkçe, açık ve kısa cevap ver.
 9. Sorunun istediği bilgi türüne uymayan içerikleri ekleme. Örneğin faydalar soruluyorsa olumsuz sonuçları listeleme.
+10. Bağlamdaki kesinlik düzeyini koru. "Katkıda bulunur", "yardımcı olur" veya "etkileyebilir" ifadelerini "önler", "kesinlikle sağlar" ya da "neden olur" gibi daha kesin ifadelere dönüştürme.
+11. Tamamı büyük harflerden oluşan cümleler kullanma.
+12. Cevabı yazım ve dil bilgisi kurallarına uygun oluştur.
+13. Cevabı en fazla dört kısa madde veya dört kısa cümleyle sınırlandır.
+14. Kullanıcının sorduğu bilgi türünün tersindeki bilgileri ekleme. Örneğin faydalar soruluyorsa uykusuzluğun zararlarını cevaba dahil etme.
 """.strip()
 
 
@@ -60,7 +65,7 @@ SORU:
         ],
         stream=False,
         options={
-            "temperature": 0.1,
+            "temperature": 0.0,
         },
     )
 

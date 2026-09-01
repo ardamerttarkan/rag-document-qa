@@ -88,7 +88,6 @@ if __name__ == "__main__":
     question=question,
     context=context,
 )
-
-print("\nModel cevabı:")
-print("-" * 50)
-print(answer)
+    print("\nModel cevabı:")
+    print("-" * 50)
+    print(answer)

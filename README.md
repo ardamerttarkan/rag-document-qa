@@ -205,3 +205,23 @@ Ollama üzerinden Qwen3 4B Instruct modeli yerel olarak çalıştırıldı. Qdra
 Modelin kullandığı kaynakları belirtmesi ve dokümanda bulunmayan bilgiler için cevap üretmemesi amacıyla uygun prompt kuralları oluşturuldu. Alakasız sorular benzerlik eşiğiyle filtrelendi.
 
 Sistem `python3 app/rag.py` komutuyla çalıştırılabilir.
+
+## 7. Gün – RAG Değerlendirme ve Optimizasyon
+
+RAG sisteminin retrieval ve generation aşamalarını ölçmek amacıyla 12 sorudan oluşan bir değerlendirme veri seti hazırlandı. Veri setinde 6 cevaplanabilir, 3 konuyla ilgili fakat cevapsız ve 3 tamamen alakasız soru kullanıldı.
+
+Retrieval değerlendirmesinde `Top-K` için 1, 3 ve 5; benzerlik eşiği için 0.75, 0.80 ve 0.85 değerleri karşılaştırıldı. `Top-K=1` kullanıldığında iki doğru içerik kaçırılırken `Top-K=3` ve `Top-K=5` aynı başarıyı verdi. Daha az context ve daha düşük gürültü nedeniyle nihai ayarlar `Top-K=3` ve `score_threshold=0.80` olarak belirlendi.
+
+Generation değerlendirmesinde cevapların beklenen anahtar kelimeleri ve geçerli kaynak numaralarını içerip içermediği kontrol edildi. Dokümanda cevabı bulunmayan sorularda modelin güvenli ret mesajı vermesi, tamamen alakasız sorularda ise LLM’in hiç çağrılmaması doğrulandı. Otomatik testlerde 12 sorunun tamamı başarılı oldu ve yalnızca 8 soru için LLM çağrısı yapıldı.
+
+Manuel incelemede otomatik kontrollerin yakalayamadığı bazı dil ve anlam sapmaları görülmesi üzerine system prompt geliştirildi. Cevap uzunluğu dört maddeyle sınırlandırıldı, kaynaktaki kesinlik düzeyinin korunması sağlandı ve soruyla ilgisiz bilgilerin cevaba eklenmemesi için yeni kurallar tanımlandı.
+
+Bu aşamada aşağıdaki değerlendirme dosyaları oluşturuldu:
+
+- `evaluation/questions.json`
+- `app/evaluation.py`
+- `app/compare_retrieval.py`
+- `app/evaluate_generation.py`
+- `evaluation/generation_results.json`
+
+Son testte retrieval başarı oranı %100, otomatik generation başarı oranı %100, ortalama retrieval süresi 42.7 ms ve ortalama generation süresi 4.72 saniye olarak ölçüldü.

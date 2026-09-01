@@ -1,0 +1,189 @@
+[
+  {
+    "id": "A01",
+    "category": "answerable",
+    "question": "Düzenli uykunun insan sağlığına faydaları nelerdir?",
+    "passed": true,
+    "explanation": "Cevap, anahtar kelime ve kaynak kontrolü başarılı",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": 1.0,
+    "source_numbers": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "answer": "Düzenli uykunun insan sağlığına faydaları şunlardır:  \n- Bağışıklık sisteminin güçlenmesine katkıda bulunur [Kaynak 2].  \n- Beynin daha verimli çalışmasına destek olur [Kaynak 2].  \n- Ruh hâlinin dengelenmesine yardımcı olur [Kaynak 2].  \n- Günlük yaşam performansının artmasına katkıda bulunur [Kaynak 2].",
+    "retrieval_duration_ms": 21.631499999784864,
+    "generation_duration_seconds": 3.5322848120013077
+  },
+  {
+    "id": "A02",
+    "category": "answerable",
+    "question": "Teknolojik cihazların kullanımı uyku düzenini nasıl etkiler?",
+    "passed": true,
+    "explanation": "Cevap, anahtar kelime ve kaynak kontrolü başarılı",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": 1.0,
+    "source_numbers": [
+      1,
+      2,
+      3
+    ],
+    "answer": "Teknolojik cihazların yoğun kullanımı, özellikle gece saatlerinde telefon, bilgisayar ve tablet ekranlarına uzun süre bakmak, uykuya geçişi zorlaştırabilir.  \nEkranlardan yayılan ışık, vücudun uyku-uyanıklık döngüsünü etkileyebilir.  \nBu durum, kişinin sürekli uykusuz kalmasına ve dikkatsiz hissine neden olabilir.  \nBunun sonucunda uyku düzeni bozulabilir ve beyin fonksiyonları üzerinde olumsuz etki yaratabilir.  \n[Kaynak 1] [Kaynak 2] [Kaynak 3]",
+    "retrieval_duration_ms": 62.03016199833655,
+    "generation_duration_seconds": 7.3195658220010955
+  },
+  {
+    "id": "A03",
+    "category": "answerable",
+    "question": "Yeterli uyku öğrenme ve hafıza süreçlerini nasıl etkiler?",
+    "passed": true,
+    "explanation": "Cevap, anahtar kelime ve kaynak kontrolü başarılı",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": 0.6666666666666666,
+    "source_numbers": [
+      1
+    ],
+    "answer": "Yeterli uyku, öğrenme ve hafıza süreçlerinin sağlıklı şekilde gerçekleşmesine yardımcı olur.  \nGün içi öğrenilen bilgilerin büyük bir bölümü uyku sırasında işlenir ve hafızaya aktarılır.  \nBu nedenle uyku düzeni, öğrenme ve hafıza fonksiyonlarını destekler.  \n[Kaynak 1]",
+    "retrieval_duration_ms": 41.89851900082431,
+    "generation_duration_seconds": 5.2383840160000545
+  },
+  {
+    "id": "A04",
+    "category": "answerable",
+    "question": "Yetersiz uyku bağışıklık sistemini nasıl etkiler?",
+    "passed": true,
+    "explanation": "Cevap, anahtar kelime ve kaynak kontrolü başarılı",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": 1.0,
+    "source_numbers": [
+      1,
+      3,
+      2
+    ],
+    "answer": "Yetersiz uyku, bağışıklık sisteminin sağlıklı çalışmasını engelleyebilir ve bu nedenle bireylerin bazı hastalıklara karşı dirençlerini azaltabilir. [Kaynak 1]  \nSürekli az uyuyan bireylerde bağışıklık sistemi zayıflayabilir. [Kaynak 3]  \nUyku eksikliği, bağışıklık sisteminin işlevselliğini olumsuz etkileyebilir. [Kaynak 2]",
+    "retrieval_duration_ms": 74.00219099872629,
+    "generation_duration_seconds": 6.187942378999651
+  },
+  {
+    "id": "A05",
+    "category": "answerable",
+    "question": "Düzenli uyku ruh sağlığına nasıl katkı sağlar?",
+    "passed": true,
+    "explanation": "Cevap, anahtar kelime ve kaynak kontrolü başarılı",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": 1.0,
+    "source_numbers": [
+      2
+    ],
+    "answer": "Düzenli uyku, ruh hâlinin dengelenmesine katkı sağlar.  \nUyku sırasında sinirlilik, stres ve duygu durum değişiklikleri daha az görülebilir.  \nYeterli uyku, kişinin günlük sorunlarla daha kolay başa çıkmasına yardımcı olur.  \nUyku problemlerinin uzun süre devam etmesi, yaşam kalitesini düşürebilir. [Kaynak 2]",
+    "retrieval_duration_ms": 69.06309599980887,
+    "generation_duration_seconds": 5.818055333000302
+  },
+  {
+    "id": "A06",
+    "category": "answerable",
+    "question": "Düzensiz uyku kalp, kan basıncı ve metabolizmayı nasıl etkiler?",
+    "passed": true,
+    "explanation": "Cevap, anahtar kelime ve kaynak kontrolü başarılı",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": 1.0,
+    "source_numbers": [
+      1
+    ],
+    "answer": "Düzensiz uyku, kalp ve damar sağlığını, kan basıncını ve metabolizmayı olumsuz etkileyebilir.  \nBu etki, uyku döngüsünün bozulmasıyla birlikte ortaya çıkar.  \nUyku düzeninin bozulması, vücutta metabolizma sürecini bozabilir.  \n[Kaynak 1]",
+    "retrieval_duration_ms": 17.155532999822753,
+    "generation_duration_seconds": 4.618681582998761
+  },
+  {
+    "id": "R01",
+    "category": "related_unanswerable",
+    "question": "Düzenli uyku göz rengini değiştirir mi?",
+    "passed": true,
+    "explanation": "Model dokümanda olmayan cevabı üretmeyi reddetti",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": null,
+    "source_numbers": [],
+    "answer": "Bu sorunun cevabı verilen dokümanlarda bulunamadı.",
+    "retrieval_duration_ms": 47.583367999322945,
+    "generation_duration_seconds": 2.5511226569997234
+  },
+  {
+    "id": "R02",
+    "category": "related_unanswerable",
+    "question": "Düzenli uyku saç dökülmesini tamamen önler mi?",
+    "passed": true,
+    "explanation": "Model dokümanda olmayan cevabı üretmeyi reddetti",
+    "result_count": 3,
+    "llm_called": true,
+    "keyword_coverage": null,
+    "source_numbers": [],
+    "answer": "Bu sorunun cevabı verilen dokümanlarda bulunamadı.",
+    "retrieval_duration_ms": 73.55903999996372,
+    "generation_duration_seconds": 2.5299110760006442
+  },
+  {
+    "id": "R03",
+    "category": "related_unanswerable",
+    "question": "Rüyalar gelecekte yaşanacak olayları gösterir mi?",
+    "passed": true,
+    "explanation": "Soru retrieval aşamasında güvenli şekilde elendi",
+    "result_count": 0,
+    "llm_called": false,
+    "keyword_coverage": null,
+    "source_numbers": [],
+    "answer": "",
+    "retrieval_duration_ms": 33.307756999420235,
+    "generation_duration_seconds": 0.0
+  },
+  {
+    "id": "U01",
+    "category": "unrelated",
+    "question": "Fenerbahçe başkanı kim?",
+    "passed": true,
+    "explanation": "Soru retrieval aşamasında güvenli şekilde elendi",
+    "result_count": 0,
+    "llm_called": false,
+    "keyword_coverage": null,
+    "source_numbers": [],
+    "answer": "",
+    "retrieval_duration_ms": 19.561045000955346,
+    "generation_duration_seconds": 0.0
+  },
+  {
+    "id": "U02",
+    "category": "unrelated",
+    "question": "İstanbul'un nüfusu kaçtır?",
+    "passed": true,
+    "explanation": "Soru retrieval aşamasında güvenli şekilde elendi",
+    "result_count": 0,
+    "llm_called": false,
+    "keyword_coverage": null,
+    "source_numbers": [],
+    "answer": "",
+    "retrieval_duration_ms": 27.99686400067003,
+    "generation_duration_seconds": 0.0
+  },
+  {
+    "id": "U03",
+    "category": "unrelated",
+    "question": "Türkiye'nin başkenti neresidir?",
+    "passed": true,
+    "explanation": "Soru retrieval aşamasında güvenli şekilde elendi",
+    "result_count": 0,
+    "llm_called": false,
+    "keyword_coverage": null,
+    "source_numbers": [],
+    "answer": "",
+    "retrieval_duration_ms": 24.659163000251283,
+    "generation_duration_seconds": 0.0
+  }
+]

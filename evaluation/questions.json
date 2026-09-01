@@ -1,0 +1,110 @@
+[
+  {
+    "id": "A01",
+    "category": "answerable",
+    "question": "Düzenli uykunun insan sağlığına faydaları nelerdir?",
+    "should_answer": true,
+    "expected_document": "uyku_duzeni.pdf",
+    "expected_pages": [2],
+    "expected_keywords": ["bağışıklık", "verimli", "ruh hâli", "performans"]
+  },
+  {
+    "id": "A02",
+    "category": "answerable",
+    "question": "Teknolojik cihazların kullanımı uyku düzenini nasıl etkiler?",
+    "should_answer": true,
+    "expected_document": "uyku_duzeni.pdf",
+    "expected_pages": [1],
+    "expected_keywords": ["ekran", "ışık", "uyku"]
+  },
+  {
+    "id": "A03",
+    "category": "answerable",
+    "question": "Yeterli uyku öğrenme ve hafıza süreçlerini nasıl etkiler?",
+    "should_answer": true,
+    "expected_document": "uyku_duzeni.pdf",
+    "expected_pages": [1],
+    "expected_keywords": ["öğrenme", "hafıza", "beyin"]
+  },
+  {
+    "id": "A04",
+    "category": "answerable",
+    "question": "Yetersiz uyku bağışıklık sistemini nasıl etkiler?",
+    "should_answer": true,
+    "expected_document": "uyku_duzeni.pdf",
+    "expected_pages": [1],
+    "expected_keywords": ["bağışıklık", "zayıflayabilir", "direnç"]
+  },
+  {
+    "id": "A05",
+    "category": "answerable",
+    "question": "Düzenli uyku ruh sağlığına nasıl katkı sağlar?",
+    "should_answer": true,
+    "expected_document": "uyku_duzeni.pdf",
+    "expected_pages": [1],
+    "expected_keywords": ["stres", "duygu", "ruh"]
+  },
+  {
+    "id": "A06",
+    "category": "answerable",
+    "question": "Düzensiz uyku kalp, kan basıncı ve metabolizmayı nasıl etkiler?",
+    "should_answer": true,
+    "expected_document": "uyku_duzeni.pdf",
+    "expected_pages": [1],
+    "expected_keywords": ["kalp", "kan basıncı", "metabolizma"]
+  },
+  {
+    "id": "R01",
+    "category": "related_unanswerable",
+    "question": "Düzenli uyku göz rengini değiştirir mi?",
+    "should_answer": false,
+    "expected_document": null,
+    "expected_pages": [],
+    "expected_keywords": []
+  },
+  {
+    "id": "R02",
+    "category": "related_unanswerable",
+    "question": "Düzenli uyku saç dökülmesini tamamen önler mi?",
+    "should_answer": false,
+    "expected_document": null,
+    "expected_pages": [],
+    "expected_keywords": []
+  },
+  {
+    "id": "R03",
+    "category": "related_unanswerable",
+    "question": "Rüyalar gelecekte yaşanacak olayları gösterir mi?",
+    "should_answer": false,
+    "expected_document": null,
+    "expected_pages": [],
+    "expected_keywords": []
+  },
+  {
+    "id": "U01",
+    "category": "unrelated",
+    "question": "Fenerbahçe başkanı kim?",
+    "should_answer": false,
+    "expected_document": null,
+    "expected_pages": [],
+    "expected_keywords": []
+  },
+  {
+    "id": "U02",
+    "category": "unrelated",
+    "question": "İstanbul'un nüfusu kaçtır?",
+    "should_answer": false,
+    "expected_document": null,
+    "expected_pages": [],
+    "expected_keywords": []
+  },
+  {
+    "id": "U03",
+    "category": "unrelated",
+    "question": "Türkiye'nin başkenti neresidir?",
+    "should_answer": false,
+    "expected_document": null,
+    "expected_pages": [],
+    "expected_keywords": []
+  }
+]
