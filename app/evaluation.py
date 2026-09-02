@@ -21,6 +21,7 @@ TOP_K = 3
 SCORE_THRESHOLD = 0.80
 
 
+# Değerlendirme sorularını JSON dosyasından yükler.
 def load_questions() -> list[dict]:
     with QUESTIONS_PATH.open(
         "r",
@@ -36,6 +37,7 @@ def load_questions() -> list[dict]:
     return questions
 
 
+# Beklenen sonucun arama sonuçlarındaki sırasını bulur.
 def find_expected_result_rank(
     results: list,
     expected_document: str,
@@ -78,6 +80,7 @@ def find_expected_result_rank(
     return None
 
 
+# Arama sonuçlarını test senaryosuna göre değerlendirir.
 def evaluate_results(
     test_case: dict,
     results: list,

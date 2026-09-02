@@ -39,12 +39,14 @@ SOURCE_PATTERN = re.compile(
 )
 
 
+# Metni karşılaştırma için standart bir biçime dönüştürür.
 def normalize_text(text: str) -> str:
     return " ".join(
         text.casefold().split()
     )
 
 
+# Beklenen anahtar kelimelerin cevapta bulunma oranını hesaplar.
 def calculate_keyword_coverage(
     answer: str,
     expected_keywords: list[str],
@@ -68,6 +70,7 @@ def calculate_keyword_coverage(
     return coverage, matched_keywords
 
 
+# Cevapta belirtilen kaynak numaralarını çıkarır.
 def extract_source_numbers(
     answer: str,
 ) -> list[int]:
@@ -79,6 +82,7 @@ def extract_source_numbers(
     ]
 
 
+# Model cevabının standart ret mesajı olup olmadığını kontrol eder.
 def is_refusal(answer: str) -> bool:
     return (
         normalize_text(answer)
@@ -86,6 +90,7 @@ def is_refusal(answer: str) -> bool:
     )
 
 
+# Üretilen cevabı içerik ve kaynak kullanımı açısından değerlendirir.
 def evaluate_generation_result(
     test_case: dict,
     results: list,

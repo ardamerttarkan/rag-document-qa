@@ -1,3 +1,4 @@
+# Metni belirlenen boyut ve örtüşme oranına göre parçalara ayırır.
 def split_text(
     text: str,
     chunk_size: int = 500,
@@ -50,6 +51,7 @@ def split_text(
 
     return chunks
 
+# Belgeleri metin parçalarına dönüştürür.
 def chunk_documents(
     documents: list[dict],
     chunk_size: int = 500,

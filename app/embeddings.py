@@ -12,6 +12,7 @@ EMBEDDING_DIMENSION = 384
 DEFAULT_BATCH_SIZE = 8
 
 
+# Embedding modelini yükler ve yükleme süresini ölçer.
 def load_embedding_model() -> tuple[SentenceTransformer, float]:
     start_time = perf_counter()
 
@@ -25,6 +26,7 @@ def load_embedding_model() -> tuple[SentenceTransformer, float]:
     return model, load_duration
 
 
+# Metin parçaları için embedding vektörleri üretir.
 def embed_chunks(
     chunks: list[dict],
     model: SentenceTransformer,

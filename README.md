@@ -225,3 +225,51 @@ Bu aşamada aşağıdaki değerlendirme dosyaları oluşturuldu:
 - `evaluation/generation_results.json`
 
 Son testte retrieval başarı oranı %100, otomatik generation başarı oranı %100, ortalama retrieval süresi 42.7 ms ve ortalama generation süresi 4.72 saniye olarak ölçüldü.
+
+## 8. Gün – FastAPI ile REST API Geliştirme
+
+Terminal üzerinden çalışan RAG sistemi, farklı istemciler ve frontend uygulamaları tarafından kullanılabilmesi amacıyla FastAPI tabanlı bir REST API’ye dönüştürüldü. API’nin çalıştırılması için Uvicorn web sunucusu kullanıldı.
+
+Mevcut RAG akışı `answer_question()` fonksiyonu altında yeniden düzenlendi. Kullanıcı sorusunun embedding’e dönüştürülmesi, Qdrant üzerinde ilgili chunk’ların aranması, context oluşturulması ve Ollama üzerinden cevap üretilmesi tek bir tekrar kullanılabilir fonksiyonda birleştirildi. Terminal üzerinden kullanım korunurken aynı fonksiyonun API tarafından da çağrılması sağlandı.
+
+Embedding modelinin her istekte yeniden yüklenmesini önlemek amacıyla FastAPI lifespan yapısı kullanıldı. Embedding modeli ve Qdrant istemcisi API başlatılırken bir kez oluşturularak `app.state` içerisinde saklandı. Böylece sonraki isteklerde aynı nesneler tekrar kullanıldı.
+
+### Veri Doğrulama ve Hata Yönetimi
+
+API request ve response yapıları Pydantic modelleriyle tanımlandı. Boş, yalnızca boşluklardan oluşan veya 500 karakter sınırını aşan sorular otomatik olarak reddedildi.
+
+API içerisinde aşağıdaki HTTP durum kodları kullanıldı:
+
+- `200`: İstek başarıyla işlendi.
+- `400`: Geçersiz kullanıcı verisi gönderildi.
+- `422`: Pydantic veri doğrulaması başarısız oldu.
+- `500`: RAG işlemi sırasında beklenmeyen bir hata oluştu.
+- `503`: Qdrant servisine veya collection’a ulaşılamadı.
+
+Frontend uygulamalarının API’ye erişebilmesi için CORS middleware eklendi. Geliştirme ortamında `localhost:3000` ve `localhost:5173` adreslerine izin verildi.
+
+### Kurulum
+
+Python bağımlılıkları `requirements.txt` dosyasına kaydedildi:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+Qdrant, Ollama ve API aşağıdaki komutlarla çalıştırılabilir:
+
+```bash
+docker compose up -d
+systemctl is-active ollama
+python3 -m uvicorn api:app --app-dir app --reload
+```
+
+API çalıştıktan sonra Swagger dokümantasyonuna aşağıdaki adresten erişilebilir:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+API; Swagger ve `curl` kullanılarak test edildi. Dokümanda bulunan sorularda kaynaklı cevap üretildiği, alakasız sorularda LLM çağrısı yapılmadığı ve geçersiz isteklerin uygun HTTP durum kodlarıyla reddedildiği doğrulandı.

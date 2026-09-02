@@ -24,6 +24,7 @@ Kurallar:
 """.strip()
 
 
+# Verilen soru ve bağlama göre model cevabı üretir.
 def generate_answer(
     question: str,
     context: str,

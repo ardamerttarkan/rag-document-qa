@@ -16,11 +16,13 @@ COLLECTION_NAME = "rag_documents"
 EMBEDDING_DIMENSION = 384
 
 
+# Qdrant veritabanı istemcisini oluşturur.
 def create_qdrant_client() -> QdrantClient:
     client = QdrantClient(url=QDRANT_URL)
     return client
 
 
+# Gerekli Qdrant koleksiyonunun var olmasını sağlar.
 def ensure_collection(client: QdrantClient) -> None:
     if client.collection_exists(COLLECTION_NAME):
         print("Collection zaten mevcut:", COLLECTION_NAME)
@@ -37,6 +39,7 @@ def ensure_collection(client: QdrantClient) -> None:
     print("Collection oluşturuldu:", COLLECTION_NAME)
 
 
+# Metin parçası için benzersiz bir nokta kimliği üretir.
 def create_point_id(chunk_id: str) -> str:
     point_id = uuid5(
         NAMESPACE_URL,
@@ -46,6 +49,7 @@ def create_point_id(chunk_id: str) -> str:
     return str(point_id)
 
 
+# Embedding içeren metin parçasını Qdrant noktasına dönüştürür.
 def embedded_chunk_to_point(
     embedded_chunk: dict,
 ) -> models.PointStruct:
@@ -71,6 +75,7 @@ def embedded_chunk_to_point(
     return point
 
 
+# Embedding içeren metin parçalarını Qdrant'a kaydeder.
 def upsert_embedded_chunks(
     client: QdrantClient,
     embedded_chunks: list[dict],

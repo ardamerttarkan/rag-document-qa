@@ -17,6 +17,7 @@ DEFAULT_TOP_K = 3
 DEFAULT_SCORE_THRESHOLD = 0.80
 
 
+# Kullanıcı sorgusunu sayısal bir vektöre dönüştürür.
 def embed_query(
     query: str,
     model: SentenceTransformer,
@@ -52,6 +53,7 @@ def embed_query(
     return vector_list
 
 
+# Sorguya en çok benzeyen metin parçalarını arar.
 def search_similar_chunks(
     client: QdrantClient,
     query_vector: list[float],
