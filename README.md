@@ -273,3 +273,9 @@ http://127.0.0.1:8000/docs
 ```
 
 API; Swagger ve `curl` kullanılarak test edildi. Dokümanda bulunan sorularda kaynaklı cevap üretildiği, alakasız sorularda LLM çağrısı yapılmadığı ve geçersiz isteklerin uygun HTTP durum kodlarıyla reddedildiği doğrulandı.
+
+## 9. Gün – İzlenebilir API Cevabı ve Logging
+
+RAG API cevabı, sistemin çalışma sürecinin takip edilebilmesi amacıyla geliştirildi. Model cevabıyla birlikte kullanılan kaynakların doküman adı, sayfa numarası, chunk kimliği ve benzerlik skorunun JSON formatında döndürülmesi sağlandı. Retrieval ve generation süreleri ayrı ayrı ölçülerek `retrieval_latency_ms` ve `generation_latency_ms` alanlarıyla milisaniye cinsinden API cevabına eklendi.
+
+BaşRESSarılı sorgular, yeterli kaynak bulunamayan sorular, veri doğrulama hataları ve beklenmeyen servis hataları için logging yapısı oluşturuldu. Loglarda soru, kaynak sayısı ve işlem süreleri tutulurken hassas doküman içeriği ve oluşturulan context kaydedilmedi. Geçersiz istekler için `422`, beklenmeyen RAG veya LLM hataları için `500` durum kodları kullanıldı. Ollama servisi geçici olarak durdurularak hata senaryosu test edildi ve kullanıcıya teknik ayrıntılar yerine güvenli bir hata mesajı döndürüldüğü doğrulandı. Böylece kaynakları, skorları, performans süreleri ve hata davranışları takip edilebilen izlenebilir bir API cevabı elde edildi.

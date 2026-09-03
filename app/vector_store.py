@@ -11,6 +11,7 @@ from embeddings import (
 from ingest import PROJECT_ROOT, load_document
 
 
+
 QDRANT_URL = "http://localhost:6333"
 COLLECTION_NAME = "rag_documents"
 EMBEDDING_DIMENSION = 384
@@ -97,6 +98,54 @@ def upsert_embedded_chunks(
 
     return len(points)
 
+def list_indexed_documents(
+    client: QdrantClient,
+) -> list[dict]:
+    documents: dict[str, dict] = {}
+    next_offset = None
+
+    while True:
+        points, next_offset = client.scroll(
+            collection_name=COLLECTION_NAME,
+            limit=100,
+            offset=next_offset,
+            with_payload=True,
+            with_vectors=False,
+        )
+
+        for point in points:
+            payload = point.payload or {}
+
+            document_id = payload.get("document_id")
+
+            if not document_id:
+                continue
+
+            if document_id not in documents:
+                documents[document_id] = {
+                    "document_id": document_id,
+                    "document_name": payload.get(
+                        "document_name"
+                    ),
+                    "document_hash": payload.get(
+                        "document_hash"
+                    ),
+                    "chunk_count": 0,
+                }
+
+            documents[document_id][
+                "chunk_count"
+            ] += 1
+
+        if next_offset is None:
+            break
+
+    return sorted(
+        documents.values(),
+        key=lambda document: (
+            document.get("document_name") or ""
+        ).lower(),
+    )
 
 if __name__ == "__main__":
     file_path = (

@@ -1,6 +1,7 @@
 import ollama
 
 
+
 MODEL_NAME = "qwen3:4b-instruct"
 
 SYSTEM_PROMPT = """
@@ -23,6 +24,19 @@ Kurallar:
 14. Kullanıcının sorduğu bilgi türünün tersindeki bilgileri ekleme. Örneğin faydalar soruluyorsa uykusuzluğun zararlarını cevaba dahil etme.
 """.strip()
 
+
+
+def is_model_available(
+    model_name: str = MODEL_NAME,
+) -> bool:
+    response = ollama.list()
+
+    installed_models = {
+        model.model
+        for model in response.models
+    }
+
+    return model_name in installed_models
 
 # Verilen soru ve bağlama göre model cevabı üretir.
 def generate_answer(
