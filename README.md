@@ -279,3 +279,9 @@ API; Swagger ve `curl` kullanılarak test edildi. Dokümanda bulunan sorularda k
 RAG API cevabı, sistemin çalışma sürecinin takip edilebilmesi amacıyla geliştirildi. Model cevabıyla birlikte kullanılan kaynakların doküman adı, sayfa numarası, chunk kimliği ve benzerlik skorunun JSON formatında döndürülmesi sağlandı. Retrieval ve generation süreleri ayrı ayrı ölçülerek `retrieval_latency_ms` ve `generation_latency_ms` alanlarıyla milisaniye cinsinden API cevabına eklendi.
 
 BaşRESSarılı sorgular, yeterli kaynak bulunamayan sorular, veri doğrulama hataları ve beklenmeyen servis hataları için logging yapısı oluşturuldu. Loglarda soru, kaynak sayısı ve işlem süreleri tutulurken hassas doküman içeriği ve oluşturulan context kaydedilmedi. Geçersiz istekler için `422`, beklenmeyen RAG veya LLM hataları için `500` durum kodları kullanıldı. Ollama servisi geçici olarak durdurularak hata senaryosu test edildi ve kullanıcıya teknik ayrıntılar yerine güvenli bir hata mesajı döndürüldüğü doğrulandı. Böylece kaynakları, skorları, performans süreleri ve hata davranışları takip edilebilen izlenebilir bir API cevabı elde edildi.
+
+## 10. Gün – Streamlit Kullanıcı Arayüzü
+
+RAG sisteminin terminal veya Swagger kullanılmadan denenebilmesi amacıyla Streamlit tabanlı bir web arayüzü hazırlandı. Arayüzün FastAPI servisinin sağlık durumunu kontrol etmesi ve kullanıcının doğal dilde yazdığı soruyu `/query` endpoint’ine göndermesi sağlandı.
+
+Model cevabıyla birlikte kaynak doküman, sayfa, chunk kimliği, benzerlik skoru, kaynak metni, retrieval süresi ve generation süresi ekranda gösterildi. İşlem sırasında yükleniyor göstergesi, boş soru kontrolü ve API hata mesajları eklendi. Sistem, dokümanla ilgili ve doküman dışında kalan sorularla uçtan uca test edildi.
