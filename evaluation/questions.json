@@ -1,110 +1,413 @@
-[
-  {
-    "id": "A01",
-    "category": "answerable",
-    "question": "Düzenli uykunun insan sağlığına faydaları nelerdir?",
-    "should_answer": true,
-    "expected_document": "uyku_duzeni.pdf",
-    "expected_pages": [2],
-    "expected_keywords": ["bağışıklık", "verimli", "ruh hâli", "performans"]
-  },
-  {
-    "id": "A02",
-    "category": "answerable",
-    "question": "Teknolojik cihazların kullanımı uyku düzenini nasıl etkiler?",
-    "should_answer": true,
-    "expected_document": "uyku_duzeni.pdf",
-    "expected_pages": [1],
-    "expected_keywords": ["ekran", "ışık", "uyku"]
-  },
-  {
-    "id": "A03",
-    "category": "answerable",
-    "question": "Yeterli uyku öğrenme ve hafıza süreçlerini nasıl etkiler?",
-    "should_answer": true,
-    "expected_document": "uyku_duzeni.pdf",
-    "expected_pages": [1],
-    "expected_keywords": ["öğrenme", "hafıza", "beyin"]
-  },
-  {
-    "id": "A04",
-    "category": "answerable",
-    "question": "Yetersiz uyku bağışıklık sistemini nasıl etkiler?",
-    "should_answer": true,
-    "expected_document": "uyku_duzeni.pdf",
-    "expected_pages": [1],
-    "expected_keywords": ["bağışıklık", "zayıflayabilir", "direnç"]
-  },
-  {
-    "id": "A05",
-    "category": "answerable",
-    "question": "Düzenli uyku ruh sağlığına nasıl katkı sağlar?",
-    "should_answer": true,
-    "expected_document": "uyku_duzeni.pdf",
-    "expected_pages": [1],
-    "expected_keywords": ["stres", "duygu", "ruh"]
-  },
-  {
-    "id": "A06",
-    "category": "answerable",
-    "question": "Düzensiz uyku kalp, kan basıncı ve metabolizmayı nasıl etkiler?",
-    "should_answer": true,
-    "expected_document": "uyku_duzeni.pdf",
-    "expected_pages": [1],
-    "expected_keywords": ["kalp", "kan basıncı", "metabolizma"]
-  },
-  {
-    "id": "R01",
-    "category": "related_unanswerable",
-    "question": "Düzenli uyku göz rengini değiştirir mi?",
-    "should_answer": false,
-    "expected_document": null,
-    "expected_pages": [],
-    "expected_keywords": []
-  },
-  {
-    "id": "R02",
-    "category": "related_unanswerable",
-    "question": "Düzenli uyku saç dökülmesini tamamen önler mi?",
-    "should_answer": false,
-    "expected_document": null,
-    "expected_pages": [],
-    "expected_keywords": []
-  },
-  {
-    "id": "R03",
-    "category": "related_unanswerable",
-    "question": "Rüyalar gelecekte yaşanacak olayları gösterir mi?",
-    "should_answer": false,
-    "expected_document": null,
-    "expected_pages": [],
-    "expected_keywords": []
-  },
-  {
-    "id": "U01",
-    "category": "unrelated",
-    "question": "Fenerbahçe başkanı kim?",
-    "should_answer": false,
-    "expected_document": null,
-    "expected_pages": [],
-    "expected_keywords": []
-  },
-  {
-    "id": "U02",
-    "category": "unrelated",
-    "question": "İstanbul'un nüfusu kaçtır?",
-    "should_answer": false,
-    "expected_document": null,
-    "expected_pages": [],
-    "expected_keywords": []
-  },
-  {
-    "id": "U03",
-    "category": "unrelated",
-    "question": "Türkiye'nin başkenti neresidir?",
-    "should_answer": false,
-    "expected_document": null,
-    "expected_pages": [],
-    "expected_keywords": []
-  }
-]
+{
+  "dataset_name": "Uyku Düzeni Retrieval Evaluation",
+  "version": "1.0",
+  "document": "uyku_duzeni.pdf",
+  "question_count": 45,
+  "questions": [
+    {
+      "id": "Q001",
+      "question": "Sirkadiyen ritim yaklaşık kaç saatlik bir döngüye sahiptir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["yaklaşık 24 saatlik", "sirkadiyen ritim"],
+      "notes": "Sirkadiyen ritmin süresi doğrudan sorulmaktadır."
+    },
+    {
+      "id": "Q002",
+      "question": "Non-REM uykusu kaç evreden oluşur?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["non-REM uykusu", "üç evre"],
+      "notes": "Non-REM evre sayısı hedeflenmektedir."
+    },
+    {
+      "id": "Q003",
+      "question": "Derin veya yavaş dalga uykusu hangi evredir ve gecenin hangi bölümünde daha yoğundur?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["üçüncü evre", "derin", "gecenin ilk bölümünde"],
+      "notes": "Üçüncü non-REM evresinin adı ve zamanlaması sorulmaktadır."
+    },
+    {
+      "id": "Q004",
+      "question": "Sağlıklı uyku neden yalnızca yatakta geçirilen süreyle değerlendirilemez?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["düzeni", "sürekliliği", "zamanlaması", "kalitesi"],
+      "notes": "Sağlıklı uykunun çok boyutlu yapısı farklı ifadeyle sorulmaktadır."
+    },
+    {
+      "id": "Q005",
+      "question": "Uyanık kalınan süre uzadıkça uyku ihtiyacını artıran bileşik hangisidir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["adenozin", "uyuma ihtiyacı güçlenir"],
+      "notes": "Uyku baskısında adenozinin rolü hedeflenmektedir."
+    },
+    {
+      "id": "Q006",
+      "question": "Kafein kişiyi neden geçici olarak daha uyanık hissettirebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["adenozinin etkisini", "geçici olarak engelleyebildiği"],
+      "notes": "Kafeinin uyku baskısı üzerindeki etkisi yeniden ifade edilmiştir."
+    },
+    {
+      "id": "Q007",
+      "question": "Sürekli değişen yatış saatleri ve gece parlak ışık kullanımı gündüz uyanıklığını nasıl etkileyebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["uyku-uyanıklık düzeninin", "uyumunu bozabilir", "gündüz uyanıklığını etkileyebilir"],
+      "notes": "Düzensiz zamanlama ile biyolojik ritim arasındaki anlamsal ilişki ölçülmektedir."
+    },
+    {
+      "id": "Q008",
+      "question": "Rüya görülen uyku döneminde beyin ve büyük kaslar nasıl davranır?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["REM uykusunda", "beyin etkinliği", "büyük kasların hareketi", "baskılanır"],
+      "notes": "REM uykusunun beyin ve kas özellikleri dolaylı biçimde sorulmaktadır."
+    },
+    {
+      "id": "Q009",
+      "question": "Vücudun gece ile gündüzü ayırt etmesine yardımcı olan çevresel işaretler nelerdir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "expected_keywords": ["ışık ve karanlık", "çevreyle uyumlu"],
+      "notes": "Işık-karanlık işaretlerinin sirkadiyen ritimdeki rolü hedeflenmektedir."
+    },
+    {
+      "id": "Q010",
+      "question": "Bir uyku döngüsü yaklaşık kaç dakikada yeniden başlar?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["80 ile 100 dakikada", "yeniden başlar"],
+      "notes": "Uyku döngüsünün yaklaşık süresi doğrudan sorulmaktadır."
+    },
+    {
+      "id": "Q011",
+      "question": "Bir gecede genellikle kaç uyku döngüsü yaşanır?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["dört ile altı", "uyku döngüsü"],
+      "notes": "Bir gecedeki uyku döngüsü sayısı hedeflenmektedir."
+    },
+    {
+      "id": "Q012",
+      "question": "18-60, 61-64 ve 65 yaş üzerindeki yetişkinler için önerilen uyku süreleri nelerdir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["en az yedi saat", "yedi ile dokuz saat", "yedi ile sekiz saat"],
+      "notes": "Üç yetişkin yaş grubunun uyku önerileri birlikte sorulmaktadır."
+    },
+    {
+      "id": "Q013",
+      "question": "Sekiz saat yatakta bulunmak neden her zaman sekiz saat kaliteli uyumak anlamına gelmez?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["gecenin sık sık bölünmesi", "döngülerin", "tamamlanmasını engelleyebilir"],
+      "notes": "Kesintisiz uyku ile yatakta geçirilen süre arasındaki fark sorulmaktadır."
+    },
+    {
+      "id": "Q014",
+      "question": "Bir uykunun kaliteli olduğunu gösteren temel özellikler nelerdir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["makul bir sürede", "sürekli uyanmamayı", "dinlenmiş hissetmeyi"],
+      "notes": "Uyku kalitesinin göstergeleri farklı ifadeyle sorulmaktadır."
+    },
+    {
+      "id": "Q015",
+      "question": "Hafta sonu uzun uyumak hafta içindeki uyku kaybını tamamen karşılar mı?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["bütün etkilerini", "tamamen ortadan kaldırmaz", "biyolojik saatin"],
+      "notes": "Hafta sonu telafi uykusunun sınırı hedeflenmektedir."
+    },
+    {
+      "id": "Q016",
+      "question": "Çocuk, ergen ve ileri yaştaki bireylerin uyku yapıları hangi yönlerden farklılaşır?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["çocukluk döneminde", "ergenlik döneminde", "ileri yaşlarda"],
+      "notes": "Yaşa bağlı uyku değişimleri kavramsal biçimde sorulmaktadır."
+    },
+    {
+      "id": "Q017",
+      "question": "İyi uyumayan bir kişinin yeni bilgileri öğrenmesi ve hatırlaması neden zorlaşabilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["dikkat", "öğrenme", "hafıza", "uyku eksikliği"],
+      "notes": "Uyku ile bilişsel işlevler arasındaki ilişki hedeflenmektedir."
+    },
+    {
+      "id": "Q018",
+      "question": "Uykusuzluk neden araç veya makine kullanılan işlerde güvenlik tehlikesi oluşturur?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "expected_keywords": ["tepki süresini yavaşlatabilir", "hata yapma olasılığını", "güvenlik riski"],
+      "notes": "Uyku yetersizliğinin performans ve güvenlik sonuçları ölçülmektedir."
+    },
+    {
+      "id": "Q019",
+      "question": "Uyku sırasında vücut hangi temel fiziksel süreçleri düzenler?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["enerji kullanımını", "hormon salgılanmasını", "bağışıklık yanıtını", "doku yenilenmesini"],
+      "notes": "Uyku sırasında düzenlenen fiziksel süreçler doğrudan sorulmaktadır."
+    },
+    {
+      "id": "Q020",
+      "question": "Yetersiz veya düzensiz uyku hangi kalp-damar sorunlarıyla bağlantılı bulunmuştur?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["yüksek tansiyon", "kalp hastalıkları", "inme"],
+      "notes": "Metinde adı geçen kalp-damar sorunları hedeflenmektedir."
+    },
+    {
+      "id": "Q021",
+      "question": "Uyku eksikliği kan şekeri ve açlık-tokluk sinyallerini nasıl etkileyebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["kan şekerini", "açlık-tokluk sinyallerinde", "değişikliklere"],
+      "notes": "Uyku eksikliğinin metabolik süreçlere etkisi doğrudan sorulmaktadır."
+    },
+    {
+      "id": "Q022",
+      "question": "Gece çalışmak için uykudan vazgeçmek öğrencinin öğrenmesini nasıl etkileyebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["dikkat", "hatırlama becerilerindeki düşüş", "bilgilerin kullanılmasını zorlaştırabilir"],
+      "notes": "Öğrenci performansı bölümü farklı ifadeyle sorgulanmaktadır."
+    },
+    {
+      "id": "Q023",
+      "question": "Uyku eksikliği iş hayatında görevlerin tamamlanmasını ve hata oranını nasıl etkiler?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["daha fazla zamana", "daha sık hata", "daha yavaş tepki"],
+      "notes": "Çalışma performansına ilişkin sonuçlar yeniden ifade edilmiştir."
+    },
+    {
+      "id": "Q024",
+      "question": "Sürekli az uyumak vücudun enfeksiyonlarla mücadele etmesini nasıl etkileyebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["doğal savunma yanıtını", "enfeksiyonlarla mücadele", "zorlaştırabilir"],
+      "notes": "Uyku eksikliği ile bağışıklık yanıtı arasındaki ilişki hedeflenmektedir."
+    },
+    {
+      "id": "Q025",
+      "question": "Bir kişide kalp hastalığı riskinin ortaya çıkmasını yalnızca uykusuzlukla açıklamak neden doğru değildir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["yalnızca uykusuzluktan", "beslenme", "fiziksel aktivite", "genetik özellikler"],
+      "notes": "Nedensellik ve diğer risk etkenleri arasındaki ayrım ölçülmektedir."
+    },
+    {
+      "id": "Q026",
+      "question": "Ağrı veya kronik bir hastalık ile uyku bozukluğu birbirini nasıl etkileyebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["çift yönlüdür", "ağrı", "kronik hastalıklar", "uykunun bölünmesine"],
+      "notes": "Fiziksel sağlık ve uyku arasındaki çift yönlü ilişki hedeflenmektedir."
+    },
+    {
+      "id": "Q027",
+      "question": "Kaygı veya depresif belirtiler ile uyku problemi arasında nasıl bir ilişki vardır?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "expected_keywords": ["çift yönlüdür", "kaygı", "depresif belirtiler", "uykuya dalmayı"],
+      "notes": "Ruh sağlığı ile uyku arasındaki karşılıklı etkileşim ölçülmektedir."
+    },
+    {
+      "id": "Q028",
+      "question": "Kafein hangi ürünlerde bulunabilir ve etkisi ne kadar sürebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["çay", "kola", "enerji içecekleri", "çikolata", "sekiz saate kadar"],
+      "notes": "Kafein kaynakları ve etki süresi doğrudan sorulmaktadır."
+    },
+    {
+      "id": "Q029",
+      "question": "Uyku ortamının hangi üç özelliğe sahip olması önerilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["serin", "sessiz", "karanlık"],
+      "notes": "Uygun yatak odası koşulları hedeflenmektedir."
+    },
+    {
+      "id": "Q030",
+      "question": "Gece uykuya dalmakta zorlanan yetişkinlerin gündüz uykusu yaklaşık kaç dakikayı aşmamalıdır?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["20 dakikayı aşmaması", "gece uykusunun korunmasına"],
+      "notes": "Gündüz uykusunun önerilen üst süresi sorulmaktadır."
+    },
+    {
+      "id": "Q031",
+      "question": "Elektronik cihazlar uyku düzenini ekran ışığı dışında hangi yollarla bozabilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["kullanım süresi", "içeriğin uyarıcılığı", "bildirimler", "uyku zamanının yerini alması"],
+      "notes": "Ekran kullanımının ışık dışındaki etkileri yeniden ifade edilmiştir."
+    },
+    {
+      "id": "Q032",
+      "question": "Nikotin ve alkol gece uykusunu hangi farklı biçimlerde etkileyebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["nikotin", "uyarıcı etki", "alkol", "daha sık uyanmaya"],
+      "notes": "Nikotin ve alkolün farklı etkileri birlikte sorgulanmaktadır."
+    },
+    {
+      "id": "Q033",
+      "question": "Yatmadan hemen önce büyük bir öğün tüketmek uyku kalitesini neden azaltabilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["ağır veya büyük öğünler", "sindirimle ilgili rahatsızlıklar"],
+      "notes": "Geç saatte ağır yemek ile uyku kalitesi ilişkisi hedeflenmektedir."
+    },
+    {
+      "id": "Q034",
+      "question": "Biyolojik saatin daha tutarlı çalışması için hafta boyunca nasıl bir program izlenmelidir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["aynı saatte yatmak ve uyanmak", "hafta sonlarında", "sınırlı tutulması"],
+      "notes": "Düzenli yatış-kalkış programı anlamsal biçimde sorulmaktadır."
+    },
+    {
+      "id": "Q035",
+      "question": "Uyumadan önce zihni sakinleştirmek isteyen biri son bir saatini nasıl geçirebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["yaklaşık bir saat", "kitap okuma", "hafif müzik", "gevşeme"],
+      "notes": "Uyku öncesi sakinleşme rutini örnekleri hedeflenmektedir."
+    },
+    {
+      "id": "Q036",
+      "question": "Gündüz hareket etmek ve doğal ışık almak gece uykusuna nasıl katkı sağlayabilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "expected_keywords": ["fiziksel aktivite", "doğal ışık", "biyolojik saatin"],
+      "notes": "Fiziksel aktivite ve gün ışığının uyku düzenindeki rolü ölçülmektedir."
+    },
+    {
+      "id": "Q037",
+      "question": "Polisomnografi sırasında hangi fizyolojik veriler incelenebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["beyin dalgaları", "göz hareketleri", "kalp hızı", "solunum", "oksijen düzeyi"],
+      "notes": "Uyku testinde ölçülen veriler doğrudan sorulmaktadır."
+    },
+    {
+      "id": "Q038",
+      "question": "Uyku günlüğüne hangi bilgiler kaydedilebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["yatma ve kalkma saatleri", "gece uyanmaları", "gündüz uykuları", "kafein tüketimi"],
+      "notes": "Uyku günlüğünün içeriği doğrudan sorulmaktadır."
+    },
+    {
+      "id": "Q039",
+      "question": "Uyku sırasında solunum bozukluğuyla ilişkili olabilecek belirtiler nelerdir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["yüksek sesle", "horlama", "nefesin durduğunun", "sabah baş ağrısı", "aşırı uyuklama"],
+      "notes": "Solunumla ilişkili uyku belirtileri hedeflenmektedir."
+    },
+    {
+      "id": "Q040",
+      "question": "Hangi durumlarda devam eden uyku problemi için sağlık uzmanına başvurulmalıdır?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["uzun süre devam ediyorsa", "dinlenmiş hissetmiyorsa", "gündüz işlevleri"],
+      "notes": "Uzman değerlendirmesi gerektiren durumlar yeniden ifade edilmiştir."
+    },
+    {
+      "id": "Q041",
+      "question": "Rutin işler veya araç kullanımı sırasında istemsiz uyuklamak neden önemsenmelidir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["araç kullanırken", "istemsiz biçimde uyuklamak", "güvenlik riski"],
+      "notes": "Gündüz uyuklamasının güvenlik boyutu sorgulanmaktadır."
+    },
+    {
+      "id": "Q042",
+      "question": "Uyku sağlığını oluşturan dört temel boyut nedir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["süre", "kalite", "düzenlilik", "doğru zamanlama"],
+      "notes": "Sonuç bölümündeki uyku sağlığı tanımı hedeflenmektedir."
+    },
+    {
+      "id": "Q043",
+      "question": "Geçici stres nedeniyle birkaç gece kötü uyumak ile değerlendirme gerektiren uyku sorunu nasıl ayrılabilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["kısa süreli stres", "uzun süre devam ediyorsa", "gündüz işlevleri"],
+      "notes": "Geçici ve kalıcı uyku sorunları arasındaki ayrım ölçülmektedir."
+    },
+    {
+      "id": "Q044",
+      "question": "Bir sağlık uzmanı uyku problemini kişinin kendi kayıtları ve gece ölçümleriyle nasıl inceleyebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["uyku günlüğü", "polisomnografi", "beyin dalgaları"],
+      "notes": "Uyku günlüğü ve uyku testi kavramsal olarak birleştirilmektedir."
+    },
+    {
+      "id": "Q045",
+      "question": "Uyku düzenini korumak isteyen bir kişi ortam, zamanlama ve akşam alışkanlıklarında nelere dikkat etmelidir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "expected_keywords": ["düzenli uyku saatleri", "yatak odası ortamı", "ışık ve uyarıcıların azaltılması"],
+      "notes": "Sonuç bölümündeki koruyucu alışkanlıklar anlamsal biçimde sorgulanmaktadır."
+    }
+  ]
+}

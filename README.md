@@ -285,3 +285,21 @@ BaşRESSarılı sorgular, yeterli kaynak bulunamayan sorular, veri doğrulama ha
 RAG sisteminin terminal veya Swagger kullanılmadan denenebilmesi amacıyla Streamlit tabanlı bir web arayüzü hazırlandı. Arayüzün FastAPI servisinin sağlık durumunu kontrol etmesi ve kullanıcının doğal dilde yazdığı soruyu `/query` endpoint’ine göndermesi sağlandı.
 
 Model cevabıyla birlikte kaynak doküman, sayfa, chunk kimliği, benzerlik skoru, kaynak metni, retrieval süresi ve generation süresi ekranda gösterildi. İşlem sırasında yükleniyor göstergesi, boş soru kontrolü ve API hata mesajları eklendi. Sistem, dokümanla ilgili ve doküman dışında kalan sorularla uçtan uca test edildi.
+
+## 11. Gün – Evaluation Veri Setinin Hazırlanması
+
+Bugün RAG sisteminin retrieval başarısını ölçmek için kullanılacak standart evaluation veri seti hazırlandı.
+
+Güncellenen uyku_duzeni.pdf yeniden chunk'landı ve Qdrant'a indekslendi. Retrieval testi sonucunda yeni içeriğin doğru sayfa ve chunk üzerinden getirildiği doğrulandı.
+
+evaluation/questions.json dosyasında toplam 45 soru oluşturuldu:
+
+15 doğrudan soru
+
+15 yeniden ifade edilmiş soru
+
+15 anlamsal eşleştirme sorusu
+
+PDF'nin her sayfası için 9 soru
+
+Her kayıtta soru kimliği, soru türü, beklenen doküman, beklenen sayfa, anahtar kelimeler ve açıklama bilgileri tutuldu. JSON yapısı ve beklenen anahtar kelimelerin ilgili sayfalarda bulunup bulunmadığı kontrol edildi.
