@@ -8,7 +8,11 @@ from embeddings import (
     embed_chunks,
     load_embedding_model,
 )
-from ingest import PROJECT_ROOT, load_document
+from ingest import (
+    PROJECT_ROOT,
+    determine_index_action,
+    load_document,
+)
 
 
 
@@ -98,6 +102,132 @@ def upsert_embedded_chunks(
 
     return len(points)
 
+
+def build_document_filter(document_id: str) -> models.Filter:
+    if not document_id.strip():
+        raise ValueError("Doküman kimliği boş olamaz.")
+
+    return models.Filter(
+        must=[
+            models.FieldCondition(
+                key="document_id",
+                match=models.MatchValue(value=document_id),
+            )
+        ]
+    )
+
+
+def get_indexed_document_hash(
+    client: QdrantClient,
+    document_id: str,
+) -> str | None:
+    points, _ = client.scroll(
+        collection_name=COLLECTION_NAME,
+        scroll_filter=build_document_filter(document_id),
+        limit=1,
+        with_payload=["document_hash"],
+        with_vectors=False,
+    )
+
+    if not points:
+        return None
+
+    payload = points[0].payload or {}
+    document_hash = payload.get("document_hash")
+
+    return str(document_hash) if document_hash else None
+
+
+def delete_document_chunks(
+    client: QdrantClient,
+    document_id: str,
+) -> None:
+    client.delete(
+        collection_name=COLLECTION_NAME,
+        points_selector=models.FilterSelector(
+            filter=build_document_filter(document_id)
+        ),
+        wait=True,
+    )
+
+
+def get_document_identity(
+    embedded_chunks: list[dict],
+) -> tuple[str, str]:
+    if not embedded_chunks:
+        raise ValueError("İndekslenecek chunk bulunamadı.")
+
+    identities = {
+        (
+            chunk["metadata"].get("document_id"),
+            chunk["metadata"].get("document_hash"),
+        )
+        for chunk in embedded_chunks
+    }
+
+    if len(identities) != 1:
+        raise ValueError(
+            "Chunk'lar aynı dokümana ve içeriğe ait olmalıdır."
+        )
+
+    document_id, document_hash = identities.pop()
+
+    if not document_id or not document_hash:
+        raise ValueError(
+            "Chunk metadata'sında doküman kimliği ve hash bulunmalıdır."
+        )
+
+    return str(document_id), str(document_hash)
+
+
+def index_document_chunks(
+    client: QdrantClient,
+    embedded_chunks: list[dict],
+) -> dict:
+    document_id, document_hash = get_document_identity(
+        embedded_chunks
+    )
+    indexed_hash = get_indexed_document_hash(
+        client=client,
+        document_id=document_id,
+    )
+    indexed_documents = (
+        {document_id: indexed_hash}
+        if indexed_hash is not None
+        else {}
+    )
+    action = determine_index_action(
+        document={
+            "document_id": document_id,
+            "document_hash": document_hash,
+        },
+        indexed_documents=indexed_documents,
+    )
+
+    if action == "skip":
+        return {
+            "action": action,
+            "document_id": document_id,
+            "indexed_count": 0,
+        }
+
+    if action == "reindex":
+        delete_document_chunks(
+            client=client,
+            document_id=document_id,
+        )
+
+    indexed_count = upsert_embedded_chunks(
+        client=client,
+        embedded_chunks=embedded_chunks,
+    )
+
+    return {
+        "action": action,
+        "document_id": document_id,
+        "indexed_count": indexed_count,
+    }
+
 def list_indexed_documents(
     client: QdrantClient,
 ) -> list[dict]:
@@ -175,7 +305,7 @@ if __name__ == "__main__":
     qdrant_client = create_qdrant_client()
     ensure_collection(qdrant_client)
 
-    upserted_count = upsert_embedded_chunks(
+    indexing_result = index_document_chunks(
         client=qdrant_client,
         embedded_chunks=embedded_chunks,
     )
@@ -188,7 +318,11 @@ if __name__ == "__main__":
     first_chunk = embedded_chunks[0]
     first_chunk_id = first_chunk["metadata"]["chunk_id"]
 
-    print("Qdrant'a gönderilen point:", upserted_count)
+    print("İndeksleme kararı:", indexing_result["action"])
+    print(
+        "Qdrant'a gönderilen point:",
+        indexing_result["indexed_count"],
+    )
     print("Collection içindeki point:", stored_count)
     print("İlk chunk ID:", first_chunk_id)
     print(

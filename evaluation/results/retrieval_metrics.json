@@ -1,0 +1,2678 @@
+{
+  "dataset_name": "Uyku Düzeni Retrieval Evaluation",
+  "dataset_version": "1.0",
+  "evaluated_at": "2026-09-08T07:26:57.584777+00:00",
+  "question_count": 45,
+  "configuration": {
+    "collection_name": "rag_documents",
+    "max_top_k": 5,
+    "score_threshold": -1.0
+  },
+  "model_load_ms": 6469.573,
+  "summary": {
+    "recall_at_1": 0.866667,
+    "recall_at_3": 1.0,
+    "recall_at_5": 1.0,
+    "mrr": 0.92963,
+    "average_latency_ms": 23.392,
+    "average_embedding_ms": 19.992,
+    "average_search_ms": 3.398
+  },
+  "questions": [
+    {
+      "id": "Q001",
+      "question": "Sirkadiyen ritim yaklaşık kaç saatlik bir döngüye sahiptir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 103.5,
+        "search": 19.009,
+        "total": 122.511
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.864952,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 2,
+          "score": 0.824012,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_2_1"
+        },
+        {
+          "rank": 3,
+          "score": 0.81279,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_1_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.807855,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_1_3"
+        },
+        {
+          "rank": 5,
+          "score": 0.801183,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        }
+      ]
+    },
+    {
+      "id": "Q002",
+      "question": "Non-REM uykusu kaç evreden oluşur?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "recall_at_1": 0,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.927,
+        "search": 3.339,
+        "total": 20.268
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.914628,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_2_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.904902,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_1_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.8949,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_1_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.893181,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_1_7"
+        },
+        {
+          "rank": 5,
+          "score": 0.867316,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_1_5"
+        }
+      ]
+    },
+    {
+      "id": "Q003",
+      "question": "Derin veya yavaş dalga uykusu hangi evredir ve gecenin hangi bölümünde daha yoğundur?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 17.918,
+        "search": 2.894,
+        "total": 20.813
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.920105,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_1_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.908092,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_1_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.879435,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_1_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.8653,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_2_1"
+        },
+        {
+          "rank": 5,
+          "score": 0.862982,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_1_3"
+        }
+      ]
+    },
+    {
+      "id": "Q004",
+      "question": "Sağlıklı uyku neden yalnızca yatakta geçirilen süreyle değerlendirilemez?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 19.084,
+        "search": 3.705,
+        "total": 22.791
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.902041,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 2,
+          "score": 0.897746,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_1_1"
+        },
+        {
+          "rank": 3,
+          "score": 0.893759,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_4_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.8864,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_5_4"
+        },
+        {
+          "rank": 5,
+          "score": 0.885612,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_2_4"
+        }
+      ]
+    },
+    {
+      "id": "Q005",
+      "question": "Uyanık kalınan süre uzadıkça uyku ihtiyacını artıran bileşik hangisidir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 20.057,
+        "search": 2.736,
+        "total": 22.794
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.889045,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_1_4"
+        },
+        {
+          "rank": 2,
+          "score": 0.885295,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_1_3"
+        },
+        {
+          "rank": 3,
+          "score": 0.875381,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 4,
+          "score": 0.869618,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 5,
+          "score": 0.86947,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_2_2"
+        }
+      ]
+    },
+    {
+      "id": "Q006",
+      "question": "Kafein kişiyi neden geçici olarak daha uyanık hissettirebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 17.338,
+        "search": 3.098,
+        "total": 20.438
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.905641,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_1_4"
+        },
+        {
+          "rank": 2,
+          "score": 0.892276,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_4_2"
+        },
+        {
+          "rank": 3,
+          "score": 0.891643,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_4_3"
+        },
+        {
+          "rank": 4,
+          "score": 0.85522,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_1_3"
+        },
+        {
+          "rank": 5,
+          "score": 0.854911,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        }
+      ]
+    },
+    {
+      "id": "Q007",
+      "question": "Sürekli değişen yatış saatleri ve gece parlak ışık kullanımı gündüz uyanıklığını nasıl etkileyebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 19.779,
+        "search": 2.996,
+        "total": 22.777
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.911101,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_1_5"
+        },
+        {
+          "rank": 2,
+          "score": 0.906421,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_4_1"
+        },
+        {
+          "rank": 3,
+          "score": 0.899364,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_4_2"
+        },
+        {
+          "rank": 4,
+          "score": 0.890911,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 5,
+          "score": 0.889872,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_4_7"
+        }
+      ]
+    },
+    {
+      "id": "Q008",
+      "question": "Rüya görülen uyku döneminde beyin ve büyük kaslar nasıl davranır?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 23.733,
+        "search": 2.717,
+        "total": 26.451
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.88635,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_1_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.860699,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.858045,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.853598,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        },
+        {
+          "rank": 5,
+          "score": 0.852665,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        }
+      ]
+    },
+    {
+      "id": "Q009",
+      "question": "Vücudun gece ile gündüzü ayırt etmesine yardımcı olan çevresel işaretler nelerdir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 1,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.94,
+        "search": 3.029,
+        "total": 19.971
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.868919,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_1_3"
+        },
+        {
+          "rank": 2,
+          "score": 0.867663,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_4_7"
+        },
+        {
+          "rank": 3,
+          "score": 0.861356,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.858249,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_5_5"
+        },
+        {
+          "rank": 5,
+          "score": 0.85237,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_4_6"
+        }
+      ]
+    },
+    {
+      "id": "Q010",
+      "question": "Bir uyku döngüsü yaklaşık kaç dakikada yeniden başlar?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 13.763,
+        "search": 3.228,
+        "total": 16.993
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.907257,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_2_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.88949,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 3,
+          "score": 0.878212,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_2_2"
+        },
+        {
+          "rank": 4,
+          "score": 0.877381,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 5,
+          "score": 0.876088,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        }
+      ]
+    },
+    {
+      "id": "Q011",
+      "question": "Bir gecede genellikle kaç uyku döngüsü yaşanır?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 14.531,
+        "search": 3.086,
+        "total": 17.619
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.917044,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_2_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.889254,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 3,
+          "score": 0.884588,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_2_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.879451,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_1_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.878463,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_5_3"
+        }
+      ]
+    },
+    {
+      "id": "Q012",
+      "question": "18-60, 61-64 ve 65 yaş üzerindeki yetişkinler için önerilen uyku süreleri nelerdir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.391,
+        "search": 2.457,
+        "total": 18.85
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.946818,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 2,
+          "score": 0.911219,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_2_4"
+        },
+        {
+          "rank": 3,
+          "score": 0.891165,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.876281,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 5,
+          "score": 0.872782,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_2_2"
+        }
+      ]
+    },
+    {
+      "id": "Q013",
+      "question": "Sekiz saat yatakta bulunmak neden her zaman sekiz saat kaliteli uyumak anlamına gelmez?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.182,
+        "search": 2.474,
+        "total": 18.658
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.911857,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_2_2"
+        },
+        {
+          "rank": 2,
+          "score": 0.896307,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_2_4"
+        },
+        {
+          "rank": 3,
+          "score": 0.893455,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_2_1"
+        },
+        {
+          "rank": 4,
+          "score": 0.889537,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 5,
+          "score": 0.884619,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        }
+      ]
+    },
+    {
+      "id": "Q014",
+      "question": "Bir uykunun kaliteli olduğunu gösteren temel özellikler nelerdir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 13.601,
+        "search": 2.318,
+        "total": 15.92
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.880738,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 2,
+          "score": 0.880559,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_2_4"
+        },
+        {
+          "rank": 3,
+          "score": 0.874331,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_5_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.868955,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 5,
+          "score": 0.867941,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_5_3"
+        }
+      ]
+    },
+    {
+      "id": "Q015",
+      "question": "Hafta sonu uzun uyumak hafta içindeki uyku kaybını tamamen karşılar mı?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.377,
+        "search": 2.423,
+        "total": 18.801
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.908773,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_2_5"
+        },
+        {
+          "rank": 2,
+          "score": 0.866779,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.866124,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_5_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.865577,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_4_5"
+        },
+        {
+          "rank": 5,
+          "score": 0.865,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        }
+      ]
+    },
+    {
+      "id": "Q016",
+      "question": "Çocuk, ergen ve ileri yaştaki bireylerin uyku yapıları hangi yönlerden farklılaşır?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.321,
+        "search": 2.006,
+        "total": 18.329
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.892339,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_2_2"
+        },
+        {
+          "rank": 2,
+          "score": 0.884294,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 3,
+          "score": 0.870528,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_2_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.868882,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_1_3"
+        },
+        {
+          "rank": 5,
+          "score": 0.868766,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        }
+      ]
+    },
+    {
+      "id": "Q017",
+      "question": "İyi uyumayan bir kişinin yeni bilgileri öğrenmesi ve hatırlaması neden zorlaşabilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.642,
+        "search": 2.286,
+        "total": 18.93
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.901647,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_2_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.881919,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.870243,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 4,
+          "score": 0.867756,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_3_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.865756,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        }
+      ]
+    },
+    {
+      "id": "Q018",
+      "question": "Uykusuzluk neden araç veya makine kullanılan işlerde güvenlik tehlikesi oluşturur?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 2,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 17.201,
+        "search": 2.162,
+        "total": 19.365
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.884123,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_2_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.879319,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_2_8"
+        },
+        {
+          "rank": 3,
+          "score": 0.858545,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_5_2"
+        },
+        {
+          "rank": 4,
+          "score": 0.847431,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_1_5"
+        },
+        {
+          "rank": 5,
+          "score": 0.842663,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_3_2"
+        }
+      ]
+    },
+    {
+      "id": "Q019",
+      "question": "Uyku sırasında vücut hangi temel fiziksel süreçleri düzenler?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 3,
+      "reciprocal_rank": 0.333333,
+      "recall_at_1": 0,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.273,
+        "search": 2.062,
+        "total": 18.337
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.904073,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_1_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.888983,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 3,
+          "score": 0.886752,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_3_2"
+        },
+        {
+          "rank": 4,
+          "score": 0.878297,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_1_7"
+        },
+        {
+          "rank": 5,
+          "score": 0.877286,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_3_5"
+        }
+      ]
+    },
+    {
+      "id": "Q020",
+      "question": "Yetersiz veya düzensiz uyku hangi kalp-damar sorunlarıyla bağlantılı bulunmuştur?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 13.642,
+        "search": 2.003,
+        "total": 15.647
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.898468,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        },
+        {
+          "rank": 2,
+          "score": 0.889186,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_3_3"
+        },
+        {
+          "rank": 3,
+          "score": 0.87874,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_3_5"
+        },
+        {
+          "rank": 4,
+          "score": 0.876889,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        },
+        {
+          "rank": 5,
+          "score": 0.867224,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        }
+      ]
+    },
+    {
+      "id": "Q021",
+      "question": "Uyku eksikliği kan şekeri ve açlık-tokluk sinyallerini nasıl etkileyebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 14.728,
+        "search": 2.07,
+        "total": 16.799
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.914987,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_3_5"
+        },
+        {
+          "rank": 2,
+          "score": 0.906551,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        },
+        {
+          "rank": 3,
+          "score": 0.884378,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        },
+        {
+          "rank": 4,
+          "score": 0.879559,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_4_4"
+        },
+        {
+          "rank": 5,
+          "score": 0.876097,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_3_2"
+        }
+      ]
+    },
+    {
+      "id": "Q022",
+      "question": "Gece çalışmak için uykudan vazgeçmek öğrencinin öğrenmesini nasıl etkileyebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 13.436,
+        "search": 2.327,
+        "total": 15.765
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.926082,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_3_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.872171,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_2_8"
+        },
+        {
+          "rank": 3,
+          "score": 0.871272,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_4_5"
+        },
+        {
+          "rank": 4,
+          "score": 0.869753,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 5,
+          "score": 0.869088,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        }
+      ]
+    },
+    {
+      "id": "Q023",
+      "question": "Uyku eksikliği iş hayatında görevlerin tamamlanmasını ve hata oranını nasıl etkiler?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 15.197,
+        "search": 2.334,
+        "total": 17.534
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.90946,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_3_2"
+        },
+        {
+          "rank": 2,
+          "score": 0.893687,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_2_7"
+        },
+        {
+          "rank": 3,
+          "score": 0.891553,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_3_1"
+        },
+        {
+          "rank": 4,
+          "score": 0.889241,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_2_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.883638,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        }
+      ]
+    },
+    {
+      "id": "Q024",
+      "question": "Sürekli az uyumak vücudun enfeksiyonlarla mücadele etmesini nasıl etkileyebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 14.95,
+        "search": 2.176,
+        "total": 17.128
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.897116,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_3_3"
+        },
+        {
+          "rank": 2,
+          "score": 0.87543,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_3_2"
+        },
+        {
+          "rank": 3,
+          "score": 0.874663,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_4_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.869045,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        },
+        {
+          "rank": 5,
+          "score": 0.86849,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        }
+      ]
+    },
+    {
+      "id": "Q025",
+      "question": "Bir kişide kalp hastalığı riskinin ortaya çıkmasını yalnızca uykusuzlukla açıklamak neden doğru değildir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "recall_at_1": 0,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 21.763,
+        "search": 3.326,
+        "total": 25.091
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.87715,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_5_3"
+        },
+        {
+          "rank": 2,
+          "score": 0.875673,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        },
+        {
+          "rank": 3,
+          "score": 0.873075,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_3_3"
+        },
+        {
+          "rank": 4,
+          "score": 0.868449,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_3_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.868369,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_3_6"
+        }
+      ]
+    },
+    {
+      "id": "Q026",
+      "question": "Ağrı veya kronik bir hastalık ile uyku bozukluğu birbirini nasıl etkileyebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 22.653,
+        "search": 15.231,
+        "total": 37.886
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.894774,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_3_6"
+        },
+        {
+          "rank": 2,
+          "score": 0.887065,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        },
+        {
+          "rank": 3,
+          "score": 0.885047,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_3_5"
+        },
+        {
+          "rank": 4,
+          "score": 0.879373,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_5_2"
+        },
+        {
+          "rank": 5,
+          "score": 0.875256,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_3_2"
+        }
+      ]
+    },
+    {
+      "id": "Q027",
+      "question": "Kaygı veya depresif belirtiler ile uyku problemi arasında nasıl bir ilişki vardır?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 3,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 26.536,
+        "search": 3.72,
+        "total": 30.258
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.903876,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.874202,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        },
+        {
+          "rank": 3,
+          "score": 0.873857,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_3_5"
+        },
+        {
+          "rank": 4,
+          "score": 0.8726,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_3_6"
+        },
+        {
+          "rank": 5,
+          "score": 0.872591,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_3_8"
+        }
+      ]
+    },
+    {
+      "id": "Q028",
+      "question": "Kafein hangi ürünlerde bulunabilir ve etkisi ne kadar sürebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 20.432,
+        "search": 2.566,
+        "total": 23.0
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.87869,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_4_3"
+        },
+        {
+          "rank": 2,
+          "score": 0.852236,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_4_2"
+        },
+        {
+          "rank": 3,
+          "score": 0.851642,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_1_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.80753,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_5_3"
+        },
+        {
+          "rank": 5,
+          "score": 0.804576,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_2_8"
+        }
+      ]
+    },
+    {
+      "id": "Q029",
+      "question": "Uyku ortamının hangi üç özelliğe sahip olması önerilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "recall_at_1": 0,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 18.384,
+        "search": 3.235,
+        "total": 21.621
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.891316,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_5_5"
+        },
+        {
+          "rank": 2,
+          "score": 0.870604,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_4_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.869501,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_5_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.867636,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_1_1"
+        },
+        {
+          "rank": 5,
+          "score": 0.866425,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        }
+      ]
+    },
+    {
+      "id": "Q030",
+      "question": "Gece uykuya dalmakta zorlanan yetişkinlerin gündüz uykusu yaklaşık kaç dakikayı aşmamalıdır?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 21.035,
+        "search": 2.749,
+        "total": 23.786
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.907098,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 2,
+          "score": 0.905591,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 3,
+          "score": 0.903284,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 4,
+          "score": 0.898257,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_2_4"
+        },
+        {
+          "rank": 5,
+          "score": 0.897029,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_4_7"
+        }
+      ]
+    },
+    {
+      "id": "Q031",
+      "question": "Elektronik cihazlar uyku düzenini ekran ışığı dışında hangi yollarla bozabilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 20.543,
+        "search": 3.117,
+        "total": 23.662
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.89766,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_4_2"
+        },
+        {
+          "rank": 2,
+          "score": 0.881557,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_4_1"
+        },
+        {
+          "rank": 3,
+          "score": 0.854248,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_5_5"
+        },
+        {
+          "rank": 4,
+          "score": 0.851971,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.847813,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_4_6"
+        }
+      ]
+    },
+    {
+      "id": "Q032",
+      "question": "Nikotin ve alkol gece uykusunu hangi farklı biçimlerde etkileyebilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 21.969,
+        "search": 3.015,
+        "total": 24.986
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.90188,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_4_4"
+        },
+        {
+          "rank": 2,
+          "score": 0.900536,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_4_3"
+        },
+        {
+          "rank": 3,
+          "score": 0.858882,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        },
+        {
+          "rank": 4,
+          "score": 0.858725,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_1_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.856643,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        }
+      ]
+    },
+    {
+      "id": "Q033",
+      "question": "Yatmadan hemen önce büyük bir öğün tüketmek uyku kalitesini neden azaltabilir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 22.712,
+        "search": 4.635,
+        "total": 27.35
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.914523,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_4_4"
+        },
+        {
+          "rank": 2,
+          "score": 0.87596,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_3_5"
+        },
+        {
+          "rank": 3,
+          "score": 0.875195,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_4_2"
+        },
+        {
+          "rank": 4,
+          "score": 0.871921,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_4_5"
+        },
+        {
+          "rank": 5,
+          "score": 0.868601,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_3_8"
+        }
+      ]
+    },
+    {
+      "id": "Q034",
+      "question": "Biyolojik saatin daha tutarlı çalışması için hafta boyunca nasıl bir program izlenmelidir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 21.429,
+        "search": 2.518,
+        "total": 23.949
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.884642,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_4_5"
+        },
+        {
+          "rank": 2,
+          "score": 0.868144,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_2_5"
+        },
+        {
+          "rank": 3,
+          "score": 0.86061,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 4,
+          "score": 0.853429,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_4_7"
+        },
+        {
+          "rank": 5,
+          "score": 0.847159,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_5_4"
+        }
+      ]
+    },
+    {
+      "id": "Q035",
+      "question": "Uyumadan önce zihni sakinleştirmek isteyen biri son bir saatini nasıl geçirebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 20.271,
+        "search": 3.054,
+        "total": 23.327
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.895539,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_4_5"
+        },
+        {
+          "rank": 2,
+          "score": 0.885179,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 3,
+          "score": 0.876258,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_4_6"
+        },
+        {
+          "rank": 4,
+          "score": 0.873696,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_4_7"
+        },
+        {
+          "rank": 5,
+          "score": 0.871464,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        }
+      ]
+    },
+    {
+      "id": "Q036",
+      "question": "Gündüz hareket etmek ve doğal ışık almak gece uykusuna nasıl katkı sağlayabilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 4,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 20.492,
+        "search": 2.981,
+        "total": 23.475
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.906749,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_4_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.895594,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_4_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.887652,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.880918,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_1_5"
+        },
+        {
+          "rank": 5,
+          "score": 0.876828,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_5_5"
+        }
+      ]
+    },
+    {
+      "id": "Q037",
+      "question": "Polisomnografi sırasında hangi fizyolojik veriler incelenebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 19.916,
+        "search": 2.318,
+        "total": 22.235
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.849457,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_5_3"
+        },
+        {
+          "rank": 2,
+          "score": 0.79682,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_2_1"
+        },
+        {
+          "rank": 3,
+          "score": 0.793154,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_1_3"
+        },
+        {
+          "rank": 4,
+          "score": 0.79197,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_1_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.791511,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        }
+      ]
+    },
+    {
+      "id": "Q038",
+      "question": "Uyku günlüğüne hangi bilgiler kaydedilebilir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 17.764,
+        "search": 3.116,
+        "total": 20.884
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.872017,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_5_3"
+        },
+        {
+          "rank": 2,
+          "score": 0.869174,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_2_7"
+        },
+        {
+          "rank": 3,
+          "score": 0.867798,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_4_7"
+        },
+        {
+          "rank": 4,
+          "score": 0.866047,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 5,
+          "score": 0.864746,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_4_6"
+        }
+      ]
+    },
+    {
+      "id": "Q039",
+      "question": "Uyku sırasında solunum bozukluğuyla ilişkili olabilecek belirtiler nelerdir?",
+      "question_type": "direct",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 19.004,
+        "search": 2.474,
+        "total": 21.481
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.905501,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_5_2"
+        },
+        {
+          "rank": 2,
+          "score": 0.889113,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_3_7"
+        },
+        {
+          "rank": 3,
+          "score": 0.883237,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_3_6"
+        },
+        {
+          "rank": 4,
+          "score": 0.88152,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_3_5"
+        },
+        {
+          "rank": 5,
+          "score": 0.879197,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        }
+      ]
+    },
+    {
+      "id": "Q040",
+      "question": "Hangi durumlarda devam eden uyku problemi için sağlık uzmanına başvurulmalıdır?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 18.93,
+        "search": 2.397,
+        "total": 21.329
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.931851,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.892556,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_3_8"
+        },
+        {
+          "rank": 3,
+          "score": 0.884389,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.883694,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 5,
+          "score": 0.877575,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        }
+      ]
+    },
+    {
+      "id": "Q041",
+      "question": "Rutin işler veya araç kullanımı sırasında istemsiz uyuklamak neden önemsenmelidir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "recall_at_1": 0,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 17.018,
+        "search": 2.567,
+        "total": 19.586
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.863681,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 7,
+          "chunk_id": "05e1664de46da1b1_2_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.856362,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_5_2"
+        },
+        {
+          "rank": 3,
+          "score": 0.850134,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_2_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.838674,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        },
+        {
+          "rank": 5,
+          "score": 0.838401,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_3_1"
+        }
+      ]
+    },
+    {
+      "id": "Q042",
+      "question": "Uyku sağlığını oluşturan dört temel boyut nedir?",
+      "question_type": "paraphrase",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.656,
+        "search": 2.317,
+        "total": 18.974
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.897248,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_5_4"
+        },
+        {
+          "rank": 2,
+          "score": 0.89417,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_1_1"
+        },
+        {
+          "rank": 3,
+          "score": 0.878426,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_3_6"
+        },
+        {
+          "rank": 4,
+          "score": 0.876375,
+          "document": "uyku_duzeni.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "chunk_id": "05e1664de46da1b1_1_2"
+        },
+        {
+          "rank": 5,
+          "score": 0.876317,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_3_4"
+        }
+      ]
+    },
+    {
+      "id": "Q043",
+      "question": "Geçici stres nedeniyle birkaç gece kötü uyumak ile değerlendirme gerektiren uyku sorunu nasıl ayrılabilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 16.512,
+        "search": 2.922,
+        "total": 19.435
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.898393,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.895159,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_3_6"
+        },
+        {
+          "rank": 3,
+          "score": 0.895047,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_3_8"
+        },
+        {
+          "rank": 4,
+          "score": 0.889055,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.888197,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_4_4"
+        }
+      ]
+    },
+    {
+      "id": "Q044",
+      "question": "Bir sağlık uzmanı uyku problemini kişinin kendi kayıtları ve gece ölçümleriyle nasıl inceleyebilir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "recall_at_1": 1,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 13.666,
+        "search": 2.808,
+        "total": 16.477
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.900177,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 2,
+          "score": 0.885759,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_5_3"
+        },
+        {
+          "rank": 3,
+          "score": 0.884472,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 3,
+          "chunk_id": "05e1664de46da1b1_2_3"
+        },
+        {
+          "rank": 4,
+          "score": 0.878851,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 5,
+          "score": 0.873472,
+          "document": "uyku_duzeni.pdf",
+          "page": 3,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_3_8"
+        }
+      ]
+    },
+    {
+      "id": "Q045",
+      "question": "Uyku düzenini korumak isteyen bir kişi ortam, zamanlama ve akşam alışkanlıklarında nelere dikkat etmelidir?",
+      "question_type": "semantic",
+      "expected_document": "uyku_duzeni.pdf",
+      "expected_page": 5,
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "recall_at_1": 0,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "latency_ms": {
+        "embedding": 17.442,
+        "search": 2.922,
+        "total": 20.366
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "score": 0.901355,
+          "document": "uyku_duzeni.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "chunk_id": "05e1664de46da1b1_4_8"
+        },
+        {
+          "rank": 2,
+          "score": 0.901304,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 5,
+          "chunk_id": "05e1664de46da1b1_5_5"
+        },
+        {
+          "rank": 3,
+          "score": 0.900047,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 1,
+          "chunk_id": "05e1664de46da1b1_5_1"
+        },
+        {
+          "rank": 4,
+          "score": 0.898453,
+          "document": "uyku_duzeni.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "chunk_id": "05e1664de46da1b1_5_4"
+        },
+        {
+          "rank": 5,
+          "score": 0.89592,
+          "document": "uyku_duzeni.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "chunk_id": "05e1664de46da1b1_2_6"
+        }
+      ]
+    }
+  ]
+}

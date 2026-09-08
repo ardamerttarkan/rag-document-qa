@@ -93,10 +93,10 @@ Aynı dokümanın tekrar indekslenmesini önlemek amacıyla belge kimliği ve i�
 - Doküman daha önce indekslenmemişse `index` kararı verilir.
 - Doküman kimliği ve içerik hash’i aynıysa duplicate kabul edilerek `skip` kararı verilir.
 - Doküman kimliği aynı fakat içerik hash’i farklıysa `reindex` kararı verilir.
-- Re-index işleminde eski dokümana ait chunk’ların silinip güncel chunk’ların yeniden eklenmesi planlandı.
+- Re-index işleminde eski dokümana ait chunk’ların silinip güncel chunk’ların yeniden eklenmesi sağlandı.
 - Karar mekanizması yeni, aynı ve değiştirilmiş doküman senaryolarıyla test edildi.
 
-Gerçek ekleme, silme ve yeniden indeksleme işlemleri Qdrant entegrasyonu sırasında uygulanacaktır.
+Qdrant üzerindeki mevcut doküman hash'i kontrol edilir. İçerik değişmemişse işlem atlanır; içerik değişmişse dokümana ait eski chunk'lar silinir ve güncel chunk'lar yeniden indekslenir.
 
 ### Testler
 
@@ -303,3 +303,9 @@ evaluation/questions.json dosyasında toplam 45 soru oluşturuldu:
 PDF'nin her sayfası için 9 soru
 
 Her kayıtta soru kimliği, soru türü, beklenen doküman, beklenen sayfa, anahtar kelimeler ve açıklama bilgileri tutuldu. JSON yapısı ve beklenen anahtar kelimelerin ilgili sayfalarda bulunup bulunmadığı kontrol edildi.
+
+## 12. Gün – Retrieval Metriklerinin Hesaplanması
+
+Bugün 45 soruluk evaluation veri setini otomatik çalıştıran retrieval değerlendirme scripti hazırlandı. Sistem için Recall@1, Recall@3, Recall@5, MRR ile embedding ve Qdrant sorgu süreleri hesaplanarak ayrıntılı sonuçlar JSON dosyasına kaydedildi.
+
+Değerlendirme sonucunda Recall@1 %86,67, Recall@3 ve Recall@5 %100, MRR ise 0,9296 olarak ölçüldü. Ortalama toplam sorgu gecikmesi 23,39 ms oldu. İlk sırada beklenen sayfayı getirmeyen altı soru incelendi ve benzer içeriklerin farklı sayfalarda bulunmasının sonuç sıralamasını etkilediği görüldü.
