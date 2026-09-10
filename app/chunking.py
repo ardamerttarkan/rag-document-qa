@@ -1,8 +1,8 @@
 # Metni belirlenen boyut ve örtüşme oranına göre parçalara ayırır.
 def split_text(
     text: str,
-    chunk_size: int = 500,
-    overlap: int = 100,
+    chunk_size: int = 800,
+    overlap: int = 150,
 ) -> list[str]:
     if chunk_size <= 0:
         raise ValueError("Chunk size sıfırdan büyük olmalıdır.")
@@ -54,8 +54,8 @@ def split_text(
 # Belgeleri metin parçalarına dönüştürür.
 def chunk_documents(
     documents: list[dict],
-    chunk_size: int = 500,
-    overlap: int = 100,
+    chunk_size: int = 800,
+    overlap: int = 150,
 ) -> list[dict]:
     all_chunks = []
 

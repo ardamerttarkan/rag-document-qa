@@ -1,8 +1,8 @@
 {
   "dataset_name": "Uyku Düzeni Retrieval Evaluation",
-  "version": "1.0",
+  "version": "1.1",
   "document": "uyku_duzeni.pdf",
-  "question_count": 45,
+  "question_count": 50,
   "questions": [
     {
       "id": "Q001",
@@ -55,7 +55,10 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 1,
-      "expected_keywords": ["adenozinin etkisini", "geçici olarak engelleyebildiği"],
+      "expected_keywords": [
+        "adenozinin etkisini",
+        "geçici olarak engelleyebildiği"
+      ],
       "notes": "Kafeinin uyku baskısı üzerindeki etkisi yeniden ifade edilmiştir."
     },
     {
@@ -64,7 +67,11 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 1,
-      "expected_keywords": ["uyku-uyanıklık düzeninin", "uyumunu bozabilir", "gündüz uyanıklığını etkileyebilir"],
+      "expected_keywords": [
+        "uyku-uyanıklık düzeninin",
+        "uyumunu bozabilir",
+        "gündüz uyanıklığını etkileyebilir"
+      ],
       "notes": "Düzensiz zamanlama ile biyolojik ritim arasındaki anlamsal ilişki ölçülmektedir."
     },
     {
@@ -73,7 +80,12 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 1,
-      "expected_keywords": ["REM uykusunda", "beyin etkinliği", "büyük kasların hareketi", "baskılanır"],
+      "expected_keywords": [
+        "REM uykusunda",
+        "beyin etkinliği",
+        "büyük kasların hareketi",
+        "baskılanır"
+      ],
       "notes": "REM uykusunun beyin ve kas özellikleri dolaylı biçimde sorulmaktadır."
     },
     {
@@ -82,7 +94,7 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 1,
-      "expected_keywords": ["ışık ve karanlık", "çevreyle uyumlu"],
+      "expected_keywords": ["karanlık", "çevreyle uyumlu"],
       "notes": "Işık-karanlık işaretlerinin sirkadiyen ritimdeki rolü hedeflenmektedir."
     },
     {
@@ -109,7 +121,11 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 2,
-      "expected_keywords": ["en az yedi saat", "yedi ile dokuz saat", "yedi ile sekiz saat"],
+      "expected_keywords": [
+        "en az yedi saat",
+        "yedi ile dokuz saat",
+        "yedi ile sekiz saat"
+      ],
       "notes": "Üç yetişkin yaş grubunun uyku önerileri birlikte sorulmaktadır."
     },
     {
@@ -118,7 +134,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 2,
-      "expected_keywords": ["gecenin sık sık bölünmesi", "döngülerin", "tamamlanmasını engelleyebilir"],
+      "expected_keywords": [
+        "gecenin sık sık bölünmesi",
+        "döngülerin",
+        "tamamlanmasını engelleyebilir"
+      ],
       "notes": "Kesintisiz uyku ile yatakta geçirilen süre arasındaki fark sorulmaktadır."
     },
     {
@@ -127,7 +147,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 2,
-      "expected_keywords": ["makul bir sürede", "sürekli uyanmamayı", "dinlenmiş hissetmeyi"],
+      "expected_keywords": [
+        "makul bir sürede",
+        "sürekli uyanmamayı",
+        "dinlenmiş hissetmeyi"
+      ],
       "notes": "Uyku kalitesinin göstergeleri farklı ifadeyle sorulmaktadır."
     },
     {
@@ -136,7 +160,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 2,
-      "expected_keywords": ["bütün etkilerini", "tamamen ortadan kaldırmaz", "biyolojik saatin"],
+      "expected_keywords": [
+        "bütün etkilerini",
+        "tamamen ortadan kaldırmaz",
+        "biyolojik saatin"
+      ],
       "notes": "Hafta sonu telafi uykusunun sınırı hedeflenmektedir."
     },
     {
@@ -145,7 +173,11 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 2,
-      "expected_keywords": ["çocukluk döneminde", "ergenlik döneminde", "ileri yaşlarda"],
+      "expected_keywords": [
+        "çocukluk döneminde",
+        "ergenlik döneminde",
+        "yaşlarda"
+      ],
       "notes": "Yaşa bağlı uyku değişimleri kavramsal biçimde sorulmaktadır."
     },
     {
@@ -163,7 +195,11 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 2,
-      "expected_keywords": ["tepki süresini yavaşlatabilir", "hata yapma olasılığını", "güvenlik riski"],
+      "expected_keywords": [
+        "tepki süresini yavaşlatabilir",
+        "hata yapma olasılığını",
+        "güvenlik riski"
+      ],
       "notes": "Uyku yetersizliğinin performans ve güvenlik sonuçları ölçülmektedir."
     },
     {
@@ -172,7 +208,12 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["enerji kullanımını", "hormon salgılanmasını", "bağışıklık yanıtını", "doku yenilenmesini"],
+      "expected_keywords": [
+        "enerji kullanımını",
+        "hormon salgılanmasını",
+        "bağışıklık yanıtını",
+        "doku yenilenmesini"
+      ],
       "notes": "Uyku sırasında düzenlenen fiziksel süreçler doğrudan sorulmaktadır."
     },
     {
@@ -190,7 +231,11 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["kan şekerini", "açlık-tokluk sinyallerinde", "değişikliklere"],
+      "expected_keywords": [
+        "kan şekerini",
+        "açlık-tokluk sinyallerinde",
+        "değişikliklere"
+      ],
       "notes": "Uyku eksikliğinin metabolik süreçlere etkisi doğrudan sorulmaktadır."
     },
     {
@@ -199,7 +244,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["dikkat", "hatırlama becerilerindeki düşüş", "bilgilerin kullanılmasını zorlaştırabilir"],
+      "expected_keywords": [
+        "dikkat",
+        "hatırlama becerilerindeki düşüş",
+        "bilgilerin kullanılmasını zorlaştırabilir"
+      ],
       "notes": "Öğrenci performansı bölümü farklı ifadeyle sorgulanmaktadır."
     },
     {
@@ -208,7 +257,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["daha fazla zamana", "daha sık hata", "daha yavaş tepki"],
+      "expected_keywords": [
+        "daha fazla zamana",
+        "daha sık hata",
+        "daha yavaş tepki"
+      ],
       "notes": "Çalışma performansına ilişkin sonuçlar yeniden ifade edilmiştir."
     },
     {
@@ -217,7 +270,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["doğal savunma yanıtını", "enfeksiyonlarla mücadele", "zorlaştırabilir"],
+      "expected_keywords": [
+        "doğal savunma yanıtını",
+        "enfeksiyonlarla mücadele",
+        "zorlaştırabilir"
+      ],
       "notes": "Uyku eksikliği ile bağışıklık yanıtı arasındaki ilişki hedeflenmektedir."
     },
     {
@@ -226,7 +283,12 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["yalnızca uykusuzluktan", "beslenme", "fiziksel aktivite", "genetik özellikler"],
+      "expected_keywords": [
+        "yalnızca uykusuzluktan",
+        "beslenme",
+        "fiziksel aktivite",
+        "genetik özellikler"
+      ],
       "notes": "Nedensellik ve diğer risk etkenleri arasındaki ayrım ölçülmektedir."
     },
     {
@@ -235,7 +297,12 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["çift yönlüdür", "ağrı", "kronik hastalıklar", "uykunun bölünmesine"],
+      "expected_keywords": [
+        "çift yönlüdür",
+        "ağrı",
+        "kronik hastalıklar",
+        "uykunun bölünmesine"
+      ],
       "notes": "Fiziksel sağlık ve uyku arasındaki çift yönlü ilişki hedeflenmektedir."
     },
     {
@@ -244,7 +311,12 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 3,
-      "expected_keywords": ["çift yönlüdür", "kaygı", "depresif belirtiler", "uykuya dalmayı"],
+      "expected_keywords": [
+        "çift yönlüdür",
+        "kaygı",
+        "depresif belirtiler",
+        "uykuya dalmayı"
+      ],
       "notes": "Ruh sağlığı ile uyku arasındaki karşılıklı etkileşim ölçülmektedir."
     },
     {
@@ -253,7 +325,13 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["çay", "kola", "enerji içecekleri", "çikolata", "sekiz saate kadar"],
+      "expected_keywords": [
+        "çay",
+        "kola",
+        "enerji içecekleri",
+        "çikolata",
+        "sekiz saate kadar"
+      ],
       "notes": "Kafein kaynakları ve etki süresi doğrudan sorulmaktadır."
     },
     {
@@ -271,7 +349,10 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["20 dakikayı aşmaması", "gece uykusunun korunmasına"],
+      "expected_keywords": [
+        "20 dakikayı aşmaması",
+        "gece uykusunun korunmasına"
+      ],
       "notes": "Gündüz uykusunun önerilen üst süresi sorulmaktadır."
     },
     {
@@ -280,7 +361,12 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["kullanım süresi", "içeriğin uyarıcılığı", "bildirimler", "uyku zamanının yerini alması"],
+      "expected_keywords": [
+        "kullanım süresi",
+        "içeriğin uyarıcılığı",
+        "bildirimler",
+        "uyku zamanının yerini alması"
+      ],
       "notes": "Ekran kullanımının ışık dışındaki etkileri yeniden ifade edilmiştir."
     },
     {
@@ -289,7 +375,12 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["nikotin", "uyarıcı etki", "alkol", "daha sık uyanmaya"],
+      "expected_keywords": [
+        "nikotin",
+        "uyarıcı etki",
+        "alkol",
+        "daha sık uyanmaya"
+      ],
       "notes": "Nikotin ve alkolün farklı etkileri birlikte sorgulanmaktadır."
     },
     {
@@ -298,7 +389,10 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["ağır veya büyük öğünler", "sindirimle ilgili rahatsızlıklar"],
+      "expected_keywords": [
+        "ağır veya büyük öğünler",
+        "sindirimle ilgili rahatsızlıklar"
+      ],
       "notes": "Geç saatte ağır yemek ile uyku kalitesi ilişkisi hedeflenmektedir."
     },
     {
@@ -307,7 +401,11 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["aynı saatte yatmak ve uyanmak", "hafta sonlarında", "sınırlı tutulması"],
+      "expected_keywords": [
+        "aynı saatte yatmak ve uyanmak",
+        "hafta sonlarında",
+        "sınırlı tutulması"
+      ],
       "notes": "Düzenli yatış-kalkış programı anlamsal biçimde sorulmaktadır."
     },
     {
@@ -316,7 +414,12 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["yaklaşık bir saat", "kitap okuma", "hafif müzik", "gevşeme"],
+      "expected_keywords": [
+        "yaklaşık bir saat",
+        "kitap okuma",
+        "hafif müzik",
+        "gevşeme"
+      ],
       "notes": "Uyku öncesi sakinleşme rutini örnekleri hedeflenmektedir."
     },
     {
@@ -325,7 +428,11 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 4,
-      "expected_keywords": ["fiziksel aktivite", "doğal ışık", "biyolojik saatin"],
+      "expected_keywords": [
+        "fiziksel aktivite",
+        "doğal ışık",
+        "biyolojik saatin"
+      ],
       "notes": "Fiziksel aktivite ve gün ışığının uyku düzenindeki rolü ölçülmektedir."
     },
     {
@@ -334,7 +441,13 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["beyin dalgaları", "göz hareketleri", "kalp hızı", "solunum", "oksijen düzeyi"],
+      "expected_keywords": [
+        "beyin dalgaları",
+        "göz hareketleri",
+        "kalp hızı",
+        "solunum",
+        "oksijen düzeyi"
+      ],
       "notes": "Uyku testinde ölçülen veriler doğrudan sorulmaktadır."
     },
     {
@@ -343,7 +456,12 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["yatma ve kalkma saatleri", "gece uyanmaları", "gündüz uykuları", "kafein tüketimi"],
+      "expected_keywords": [
+        "yatma ve kalkma saatleri",
+        "gece uyanmaları",
+        "gündüz uykuları",
+        "kafein tüketimi"
+      ],
       "notes": "Uyku günlüğünün içeriği doğrudan sorulmaktadır."
     },
     {
@@ -352,7 +470,13 @@
       "question_type": "direct",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["yüksek sesle", "horlama", "nefesin durduğunun", "sabah baş ağrısı", "aşırı uyuklama"],
+      "expected_keywords": [
+        "yüksek sesle",
+        "horlama",
+        "nefesin durduğunun",
+        "sabah baş ağrısı",
+        "aşırı uyuklama"
+      ],
       "notes": "Solunumla ilişkili uyku belirtileri hedeflenmektedir."
     },
     {
@@ -361,7 +485,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["uzun süre devam ediyorsa", "dinlenmiş hissetmiyorsa", "gündüz işlevleri"],
+      "expected_keywords": [
+        "uzun süre devam ediyorsa",
+        "dinlenmiş hissetmiyorsa",
+        "gündüz işlevleri"
+      ],
       "notes": "Uzman değerlendirmesi gerektiren durumlar yeniden ifade edilmiştir."
     },
     {
@@ -370,7 +498,11 @@
       "question_type": "paraphrase",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["araç kullanırken", "istemsiz biçimde uyuklamak", "güvenlik riski"],
+      "expected_keywords": [
+        "araç kullanırken",
+        "istemsiz biçimde uyuklamak",
+        "güvenlik riski"
+      ],
       "notes": "Gündüz uyuklamasının güvenlik boyutu sorgulanmaktadır."
     },
     {
@@ -388,7 +520,11 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["kısa süreli stres", "uzun süre devam ediyorsa", "gündüz işlevleri"],
+      "expected_keywords": [
+        "kısa süreli stres",
+        "uzun süre devam ediyorsa",
+        "gündüz işlevleri"
+      ],
       "notes": "Geçici ve kalıcı uyku sorunları arasındaki ayrım ölçülmektedir."
     },
     {
@@ -397,7 +533,11 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["uyku günlüğü", "polisomnografi", "beyin dalgaları"],
+      "expected_keywords": [
+        "uyku günlüğü",
+        "polisomnografi",
+        "beyin dalgaları"
+      ],
       "notes": "Uyku günlüğü ve uyku testi kavramsal olarak birleştirilmektedir."
     },
     {
@@ -406,8 +546,62 @@
       "question_type": "semantic",
       "expected_document": "uyku_duzeni.pdf",
       "expected_page": 5,
-      "expected_keywords": ["düzenli uyku saatleri", "yatak odası ortamı", "ışık ve uyarıcıların azaltılması"],
+      "expected_keywords": [
+        "düzenli uyku saatleri",
+        "yatak odası ortamı",
+        "ışık ve uyarıcıların azaltılması"
+      ],
       "notes": "Sonuç bölümündeki koruyucu alışkanlıklar anlamsal biçimde sorgulanmaktadır."
+    },
+    {
+      "id": "Q046",
+      "question": "REM uykusunu tamamen ortadan kaldırmak için hangi ilaç kullanılmalıdır?",
+      "question_type": "no_answer",
+      "answerable": false,
+      "expected_document": null,
+      "expected_page": null,
+      "expected_keywords": [],
+      "notes": "Dokümanda REM uykusunu ortadan kaldırmaya yönelik ilaç bilgisi bulunmamaktadır."
+    },
+    {
+      "id": "Q047",
+      "question": "Dünyada ortalama uyku süresi en yüksek olan ülke hangisidir?",
+      "question_type": "no_answer",
+      "answerable": false,
+      "expected_document": null,
+      "expected_page": null,
+      "expected_keywords": [],
+      "notes": "Dokümanda ülkelere göre uyku süresi karşılaştırması bulunmamaktadır."
+    },
+    {
+      "id": "Q048",
+      "question": "Uyku kalitesini ölçen akıllı saat markaları hangileridir?",
+      "question_type": "no_answer",
+      "answerable": false,
+      "expected_document": null,
+      "expected_page": null,
+      "expected_keywords": [],
+      "notes": "Dokümanda akıllı saat veya ürün markası önerisi bulunmamaktadır."
+    },
+    {
+      "id": "Q049",
+      "question": "Melatonin takviyesi için önerilen günlük doz kaç miligramdır?",
+      "question_type": "no_answer",
+      "answerable": false,
+      "expected_document": null,
+      "expected_page": null,
+      "expected_keywords": [],
+      "notes": "Dokümanda melatonin takviyesi veya doz bilgisi bulunmamaktadır."
+    },
+    {
+      "id": "Q050",
+      "question": "Uyku bozukluklarının cerrahi tedavi yöntemleri nelerdir?",
+      "question_type": "no_answer",
+      "answerable": false,
+      "expected_document": null,
+      "expected_page": null,
+      "expected_keywords": [],
+      "notes": "Dokümanda cerrahi tedavi yöntemleri açıklanmamaktadır."
     }
   ]
 }

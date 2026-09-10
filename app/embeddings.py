@@ -105,8 +105,8 @@ if __name__ == "__main__":
 
     chunks = chunk_documents(
         documents=documents,
-        chunk_size=500,
-        overlap=100,
+        chunk_size=800,
+        overlap=150,
     )
 
     print("Toplam chunk sayısı:", len(chunks))

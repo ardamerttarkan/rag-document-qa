@@ -309,3 +309,11 @@ Her kayıtta soru kimliği, soru türü, beklenen doküman, beklenen sayfa, anah
 Bugün 45 soruluk evaluation veri setini otomatik çalıştıran retrieval değerlendirme scripti hazırlandı. Sistem için Recall@1, Recall@3, Recall@5, MRR ile embedding ve Qdrant sorgu süreleri hesaplanarak ayrıntılı sonuçlar JSON dosyasına kaydedildi.
 
 Değerlendirme sonucunda Recall@1 %86,67, Recall@3 ve Recall@5 %100, MRR ise 0,9296 olarak ölçüldü. Ortalama toplam sorgu gecikmesi 23,39 ms oldu. İlk sırada beklenen sayfayı getirmeyen altı soru incelendi ve benzer içeriklerin farklı sayfalarda bulunmasının sonuç sıralamasını etkilediği görüldü.
+
+## 13. Gün – Retrieval Optimizasyonu
+
+Bugün RAG sisteminin retrieval başarısını artırmak amacıyla farklı chunk boyutu ve overlap değerleri karşılaştırıldı. Değerlendirme veri setine 5 adet no-answer sorusu eklenerek toplam soru sayısı 50’ye çıkarıldı ve doğru sonuç kontrolü chunk içeriğine göre yapılacak şekilde geliştirildi.
+
+`300/50`, `500/100` ve `800/150` yapılandırmalarıyla gerçekleştirilen deneylerde en başarılı sonucu `800/150` verdi. Bu yapılandırma ana sisteme uygulanarak doküman yeniden indekslendi ve Qdrant’a 23 chunk kaydedildi.
+
+Son değerlendirmede Recall@1 `%73,33`, Recall@3 `%91,11`, Recall@5 `%95,56` ve MRR `0,8248` olarak ölçüldü. No-answer sorularının reddedilmesi ise geliştirilmesi gereken bir sonraki alan olarak belirlendi.
