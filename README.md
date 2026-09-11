@@ -317,3 +317,9 @@ Bugün RAG sisteminin retrieval başarısını artırmak amacıyla farklı chunk
 `300/50`, `500/100` ve `800/150` yapılandırmalarıyla gerçekleştirilen deneylerde en başarılı sonucu `800/150` verdi. Bu yapılandırma ana sisteme uygulanarak doküman yeniden indekslendi ve Qdrant’a 23 chunk kaydedildi.
 
 Son değerlendirmede Recall@1 `%73,33`, Recall@3 `%91,11`, Recall@5 `%95,56` ve MRR `0,8248` olarak ölçüldü. No-answer sorularının reddedilmesi ise geliştirilmesi gereken bir sonraki alan olarak belirlendi.
+
+## 14. Gün – Hybrid Search Karşılaştırması
+
+Bugün mevcut dense retrieval yöntemine BM25 tabanlı lexical arama eklenmiş ve sonuçlar Reciprocal Rank Fusion yöntemiyle birleştirilerek hybrid retrieval yapısı oluşturulmuştur. Dense ve hybrid yöntemler, `chunk_size=500`, `overlap=100` ve `Top-K=5` yapılandırmasıyla 50 soruluk evaluation veri seti üzerinde karşılaştırılmıştır.
+
+Dense yöntemde Recall@1 `%68,89`, Recall@3 `%86,67`, Recall@5 `%88,89` ve MRR `0,7759`; hybrid yöntemde ise Recall@1 `%73,33`, Recall@3 `%84,44`, Recall@5 `%86,67` ve MRR `0,7833` ölçülmüştür. Hybrid yöntem ilk sıra başarısını artırmasına rağmen Recall@3 ve Recall@5 değerlerini düşürdüğü için ana sistemde dense retrieval kullanılmaya devam edilmesine karar verilmiştir.
