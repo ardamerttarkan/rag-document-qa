@@ -323,3 +323,11 @@ Son değerlendirmede Recall@1 `%73,33`, Recall@3 `%91,11`, Recall@5 `%95,56` ve 
 Bugün mevcut dense retrieval yöntemine BM25 tabanlı lexical arama eklenmiş ve sonuçlar Reciprocal Rank Fusion yöntemiyle birleştirilerek hybrid retrieval yapısı oluşturulmuştur. Dense ve hybrid yöntemler, `chunk_size=500`, `overlap=100` ve `Top-K=5` yapılandırmasıyla 50 soruluk evaluation veri seti üzerinde karşılaştırılmıştır.
 
 Dense yöntemde Recall@1 `%68,89`, Recall@3 `%86,67`, Recall@5 `%88,89` ve MRR `0,7759`; hybrid yöntemde ise Recall@1 `%73,33`, Recall@3 `%84,44`, Recall@5 `%86,67` ve MRR `0,7833` ölçülmüştür. Hybrid yöntem ilk sıra başarısını artırmasına rağmen Recall@3 ve Recall@5 değerlerini düşürdüğü için ana sistemde dense retrieval kullanılmaya devam edilmesine karar verilmiştir.
+
+## 15. Gün – Reranker Benchmark ve Hata Analizi
+
+Bugün hybrid retrieval tarafından getirilen ilk beş sonucu yeniden sıralamak amacıyla CPU üzerinde çalışan çok dilli bir CrossEncoder reranker eklenmiştir. Dense, hybrid ve hybrid + reranker yöntemleri `chunk_size=500`, `overlap=100` ve `Top-K=5` yapılandırmasıyla 50 soruluk evaluation veri seti üzerinde karşılaştırılmıştır.
+
+Reranker kullanıldığında Recall@1 değeri `%73,33`ten `%80,00`e, MRR değeri ise `0,7833`ten `0,8278`e yükselmiştir. Ortalama reranker inference süresi `127,05 ms` olarak ölçülmüş; hata analizinde 4 sorunun sıralamasının iyileştiği, 2 sorunun gerilediği ve 39 sorunun değişmediği belirlenmiştir.
+
+Reranker ilk sıra doğruluğunu artırmış ancak Recall@3 ve Recall@5 sonuçlarında iyileşme sağlamamıştır. Bu nedenle elde edilen doğruluk artışının ek CPU gecikmesiyle birlikte değerlendirilmesi gerektiği sonucuna varılmıştır.
