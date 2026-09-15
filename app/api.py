@@ -318,47 +318,6 @@ def get_documents(request: Request) -> dict:
             ),
         ) from error
 
-def health_check(request: Request) -> dict:
-    try:
-        qdrant_client = (
-            request.app.state.qdrant_client
-        )
-
-        collection_ready = (
-            qdrant_client.collection_exists(
-                COLLECTION_NAME
-            )
-        )
-    except Exception as error:
-        logger.exception(
-            "Qdrant sağlık kontrolü başarısız."
-        )
-
-        raise HTTPException(
-            status_code=503,
-            detail="Qdrant servisine ulaşılamadı.",
-        ) from error
-
-    if not collection_ready:
-        raise HTTPException(
-            status_code=503,
-            detail=(
-                "Qdrant collection hazır değil: "
-                f"{COLLECTION_NAME}"
-            ),
-        )
-    logger.info(
-        "Sağlık kontrolü başarılı | "
-        "collection=%s",
-        COLLECTION_NAME,
-    )
-    return {
-        "status": "ok",
-        "qdrant_collection": COLLECTION_NAME,
-        "collection_ready": True,
-        "embedding_model_loaded": True,
-    }
-
 @app.post(
     "/query",
     response_model=AskResponse,

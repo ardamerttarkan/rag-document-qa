@@ -331,3 +331,7 @@ Bugün hybrid retrieval tarafından getirilen ilk beş sonucu yeniden sıralamak
 Reranker kullanıldığında Recall@1 değeri `%73,33`ten `%80,00`e, MRR değeri ise `0,7833`ten `0,8278`e yükselmiştir. Ortalama reranker inference süresi `127,05 ms` olarak ölçülmüş; hata analizinde 4 sorunun sıralamasının iyileştiği, 2 sorunun gerilediği ve 39 sorunun değişmediği belirlenmiştir.
 
 Reranker ilk sıra doğruluğunu artırmış ancak Recall@3 ve Recall@5 sonuçlarında iyileşme sağlamamıştır. Bu nedenle elde edilen doğruluk artışının ek CPU gecikmesiyle birlikte değerlendirilmesi gerektiği sonucuna varılmıştır.
+
+## 16. Gün – Otomatik Testler
+
+Pytest kullanılarak chunking, doküman yükleme, retrieval ve FastAPI endpointleri için otomatik testler hazırlandı. Boş sorgu, geçersiz parametre, bozuk veya desteklenmeyen dosya ve servis hataları gibi uç durumlar test edildi. Qdrant, Ollama ve embedding modeli mock yapılarla izole edilerek toplam 47 test başarıyla tamamlandı.
