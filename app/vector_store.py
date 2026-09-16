@@ -103,6 +103,7 @@ def upsert_embedded_chunks(
     return len(points)
 
 
+# Belirtilen doküman kimliğine ait noktaları seçen Qdrant filtresini oluşturur.
 def build_document_filter(document_id: str) -> models.Filter:
     if not document_id.strip():
         raise ValueError("Doküman kimliği boş olamaz.")
@@ -117,6 +118,7 @@ def build_document_filter(document_id: str) -> models.Filter:
     )
 
 
+# İndeksteki dokümanın kayıtlı içerik özetini döndürür.
 def get_indexed_document_hash(
     client: QdrantClient,
     document_id: str,
@@ -138,6 +140,7 @@ def get_indexed_document_hash(
     return str(document_hash) if document_hash else None
 
 
+# Belirtilen dokümana ait tüm parçaları Qdrant koleksiyonundan siler.
 def delete_document_chunks(
     client: QdrantClient,
     document_id: str,
@@ -151,6 +154,7 @@ def delete_document_chunks(
     )
 
 
+# Parçaların ortak doküman kimliğini ve içerik özetini doğrulayarak döndürür.
 def get_document_identity(
     embedded_chunks: list[dict],
 ) -> tuple[str, str]:
@@ -180,6 +184,7 @@ def get_document_identity(
     return str(document_id), str(document_hash)
 
 
+# Doküman parçalarını indeks durumuna göre ekler, atlar veya yeniden indeksler.
 def index_document_chunks(
     client: QdrantClient,
     embedded_chunks: list[dict],
@@ -228,6 +233,7 @@ def index_document_chunks(
         "indexed_count": indexed_count,
     }
 
+# Qdrant'taki parçaları doküman bazında gruplayarak listeler.
 def list_indexed_documents(
     client: QdrantClient,
 ) -> list[dict]:

@@ -68,6 +68,7 @@ EXPERIMENTS = (
 )
 
 
+# Chunk yapılandırmasına özgü Qdrant koleksiyon adını oluşturur.
 def build_collection_name(configuration: dict) -> str:
     return (
         "rag_documents_day13_"
@@ -76,6 +77,7 @@ def build_collection_name(configuration: dict) -> str:
     )
 
 
+# Deney için temiz bir Qdrant koleksiyonu oluşturur.
 def create_experiment_collection(client, collection_name: str) -> None:
     if client.collection_exists(collection_name):
         client.delete_collection(collection_name)
@@ -89,6 +91,7 @@ def create_experiment_collection(client, collection_name: str) -> None:
     )
 
 
+# Dokümanı belirtilen chunk yapılandırmasıyla parçalayıp indeksler.
 def index_configuration(
     client,
     collection_name: str,
@@ -135,6 +138,7 @@ def index_configuration(
     }
 
 
+# Değerlendirme sorularının sorgu vektörlerini önceden üretir.
 def prepare_query_vectors(questions: list[dict], model) -> dict[str, list]:
     vectors = {}
 
@@ -151,6 +155,7 @@ def prepare_query_vectors(questions: list[dict], model) -> dict[str, list]:
     return vectors
 
 
+# Belirtilen deney koleksiyonunda benzerlik araması yapar.
 def search_collection(
     client,
     collection_name: str,
@@ -171,6 +176,7 @@ def search_collection(
     return response.points, search_ms
 
 
+# Tek bir chunk yapılandırmasının retrieval başarısını ve hızını ölçer.
 def evaluate_configuration(
     client,
     collection_name: str,
@@ -261,6 +267,7 @@ def evaluate_configuration(
     }
 
 
+# Deney sonuçlarından ölçütlere göre en iyi chunk yapılandırmasını seçer.
 def select_best_configuration(results: list[dict]) -> dict:
     return max(
         results,
@@ -273,6 +280,7 @@ def select_best_configuration(results: list[dict]) -> dict:
     )
 
 
+# Chunk yapılandırmalarını terminalde karşılaştırıp seçilen sonucu gösterir.
 def print_comparison(results: list[dict], best: dict) -> None:
     print("\n" + "=" * 76)
     print("CHUNK YAPILANDIRMASI KARŞILAŞTIRMASI")
@@ -300,6 +308,7 @@ def print_comparison(results: list[dict], best: dict) -> None:
     print("Sonuç dosyası:", RESULTS_PATH)
 
 
+# Tüm chunk yapılandırma deneylerini çalıştırıp sonuçları kaydeder.
 def run_experiments() -> dict:
     dataset, questions = load_questions()
 

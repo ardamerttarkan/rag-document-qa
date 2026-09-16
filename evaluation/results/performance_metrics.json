@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-09-16T13:20:04.733700+00:00",
+  "api_url": "http://127.0.0.1:8000",
+  "question_ids": [
+    "Q001",
+    "Q010",
+    "Q019",
+    "Q028",
+    "Q037"
+  ],
+  "request_count": 5,
+  "success_count": 5,
+  "error_count": 0,
+  "success_rate_percent": 100.0,
+  "latency_summary_ms": {
+    "client_total": {
+      "minimum": 4932.53,
+      "average": 7001.42,
+      "median": 5770.0,
+      "maximum": 12171.73
+    },
+    "server_total": {
+      "minimum": 4930.87,
+      "average": 6999.89,
+      "median": 5768.9,
+      "maximum": 12170.33
+    },
+    "retrieval": {
+      "minimum": 32.5,
+      "average": 84.13,
+      "median": 41.32,
+      "maximum": 257.94
+    },
+    "generation": {
+      "minimum": 4880.0,
+      "average": 6916.0,
+      "median": 5730.0,
+      "maximum": 11910.0
+    }
+  },
+  "requests": [
+    {
+      "id": "Q001",
+      "question": "Sirkadiyen ritim yaklaşık kaç saatlik bir döngüye sahiptir?",
+      "success": true,
+      "status_code": 200,
+      "client_total_latency_ms": 12171.73,
+      "server_total_latency_ms": 12170.33,
+      "retrieval_latency_ms": 257.94,
+      "generation_latency_ms": 11910.0,
+      "source_count": 3,
+      "error": null
+    },
+    {
+      "id": "Q010",
+      "question": "Bir uyku döngüsü yaklaşık kaç dakikada yeniden başlar?",
+      "success": true,
+      "status_code": 200,
+      "client_total_latency_ms": 5770.0,
+      "server_total_latency_ms": 5768.9,
+      "retrieval_latency_ms": 41.32,
+      "generation_latency_ms": 5730.0,
+      "source_count": 3,
+      "error": null
+    },
+    {
+      "id": "Q019",
+      "question": "Uyku sırasında vücut hangi temel fiziksel süreçleri düzenler?",
+      "success": true,
+      "status_code": 200,
+      "client_total_latency_ms": 5763.31,
+      "server_total_latency_ms": 5761.92,
+      "retrieval_latency_ms": 32.5,
+      "generation_latency_ms": 5730.0,
+      "source_count": 3,
+      "error": null
+    },
+    {
+      "id": "Q028",
+      "question": "Kafein hangi ürünlerde bulunabilir ve etkisi ne kadar sürebilir?",
+      "success": true,
+      "status_code": 200,
+      "client_total_latency_ms": 6369.52,
+      "server_total_latency_ms": 6367.42,
+      "retrieval_latency_ms": 38.98,
+      "generation_latency_ms": 6330.0,
+      "source_count": 3,
+      "error": null
+    },
+    {
+      "id": "Q037",
+      "question": "Polisomnografi sırasında hangi fizyolojik veriler incelenebilir?",
+      "success": true,
+      "status_code": 200,
+      "client_total_latency_ms": 4932.53,
+      "server_total_latency_ms": 4930.87,
+      "retrieval_latency_ms": 49.91,
+      "generation_latency_ms": 4880.0,
+      "source_count": 2,
+      "error": null
+    }
+  ]
+}

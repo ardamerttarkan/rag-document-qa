@@ -67,6 +67,7 @@ from vector_store import create_qdrant_client  # noqa: E402
 COLLECTION_NAME = "rag_documents_day15_reranker"
 
 
+# Yeniden sıralanmış sonuçları JSON ile uyumlu kayıtlara dönüştürür.
 def serialize_reranked_results(results: list) -> list[dict]:
     serialized = []
 
@@ -95,6 +96,7 @@ def serialize_reranked_results(results: list) -> list[dict]:
     return serialized
 
 
+# Hibrit ve reranker sıralarını karşılaştırarak değişimin yönünü belirler.
 def compare_ranks(
     hybrid_rank: int | None,
     reranker_rank: int | None,
@@ -119,6 +121,7 @@ def compare_ranks(
     return "unchanged"
 
 
+# Reranker etkisini soru bazında inceleyen hata analizini oluşturur.
 def build_error_analysis(records: list[dict]) -> dict:
     details = []
     counts = {
@@ -160,6 +163,7 @@ def build_error_analysis(records: list[dict]) -> dict:
     }
 
 
+# Reranker değerlendirmesini Markdown raporuna yazar.
 def write_report(evaluation: dict) -> None:
     dense = evaluation["summary"]["dense"]
     hybrid = evaluation["summary"]["hybrid"]
@@ -220,6 +224,7 @@ Reranker yalnızca hybrid retrieval tarafından getirilen ilk {MAX_TOP_K} sonucu
     REPORT_PATH.write_text(report, encoding="utf-8")
 
 
+# Dense, hibrit ve reranker ölçümlerinin özetini terminalde gösterir.
 def print_summary(evaluation: dict) -> None:
     print("\n" + "=" * 88)
     print("DENSE, HYBRID VE RERANKER KARŞILAŞTIRMASI")
@@ -255,6 +260,7 @@ def print_summary(evaluation: dict) -> None:
     print("Rapor dosyası:", REPORT_PATH)
 
 
+# Reranker modelinin retrieval sıralamasına etkisini değerlendirir.
 def evaluate_reranker() -> dict:
     dataset, questions = load_questions()
 

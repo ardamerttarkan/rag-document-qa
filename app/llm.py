@@ -26,6 +26,7 @@ Kurallar:
 
 
 
+# İstenen Ollama modelinin yerel olarak kullanılabilir olup olmadığını kontrol eder.
 def is_model_available(
     model_name: str = MODEL_NAME,
 ) -> bool:

@@ -1,3 +1,4 @@
+from time import perf_counter
 import logging
 from contextlib import asynccontextmanager
 from fastapi import (
@@ -53,6 +54,7 @@ class AskRequest(BaseModel):
         ],
     )
 
+    # Soru metnini kırpar ve boş olmadığını doğrular.
     @field_validator("question")
     @classmethod
     def validate_question(cls, value: str) -> str:
@@ -100,6 +102,7 @@ class DocumentListResponse(BaseModel):
     documents: list[DocumentResponse]
 
 
+# Uygulamanın bağımlılıklarını başlatır ve kapanışta kaynakları serbest bırakır.
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     embedding_model, _ = load_embedding_model()
@@ -146,6 +149,56 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
+@app.middleware("http")
+async def log_request_metrics(
+    request: Request,
+    call_next,
+):
+    start_time = perf_counter()
+
+    try:
+        response = await call_next(request)
+    except Exception:
+        total_latency_ms = round(
+            (perf_counter() - start_time) * 1000,
+            2,
+        )
+
+        logger.exception(
+            "HTTP isteği başarısız | "
+            "method=%s | path=%s | "
+            "total_latency_ms=%.2f",
+            request.method,
+            request.url.path,
+            total_latency_ms,
+        )
+
+        raise
+
+    total_latency_ms = round(
+        (perf_counter() - start_time) * 1000,
+        2,
+    )
+
+    response.headers["X-Process-Time-Ms"] = str(
+        total_latency_ms
+    )
+
+    logger.info(
+        "HTTP isteği tamamlandı | "
+        "method=%s | path=%s | "
+        "status_code=%d | total_latency_ms=%.2f",
+        request.method,
+        request.url.path,
+        response.status_code,
+        total_latency_ms,
+    )
+
+    return response
+
+
+
+# İstek doğrulama hatalarını kaydeder ve standart FastAPI yanıtına dönüştürür.
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(
     request: Request,
@@ -176,6 +229,7 @@ async def validation_exception_handler(
         error,
     )
     
+# API'nin temel bilgilerini ve bağlantılarını döndürür.
 @app.get("/")
 def root() -> dict:
     return {
@@ -186,6 +240,7 @@ def root() -> dict:
 
 
 
+# Qdrant koleksiyonu ile Ollama modelinin hazır olduğunu denetler.
 @app.get(
     "/health",
     responses={
@@ -269,6 +324,7 @@ def health_check(request: Request) -> dict:
         "llm_model": MODEL_NAME,
     }
 
+# İndekslenmiş dokümanları ve toplam parça sayılarını listeler.
 @app.get(
     "/documents",
     response_model=DocumentListResponse,
@@ -318,6 +374,7 @@ def get_documents(request: Request) -> dict:
             ),
         ) from error
 
+# Kullanıcı sorusunu RAG hattında işleyerek cevabı ve kaynakları döndürür.
 @app.post(
     "/query",
     response_model=AskResponse,

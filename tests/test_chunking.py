@@ -6,6 +6,7 @@ from chunking import (
 )
 
 
+# Geçersiz boyut ve örtüşme değerlerinin reddedildiğini doğrular.
 @pytest.mark.parametrize(
     ("chunk_size", "overlap"),
     [
@@ -28,6 +29,7 @@ def test_split_text_rejects_invalid_configuration(
         )
 
 
+# Uzun metnin boyut sınırına uyan boş olmayan parçalara ayrıldığını doğrular.
 def test_split_text_creates_non_empty_chunks() -> None:
     text = " ".join(
         f"kelime{index}"
@@ -45,10 +47,12 @@ def test_split_text_creates_non_empty_chunks() -> None:
     assert all(len(chunk) <= 80 for chunk in chunks)
 
 
+# Boş metnin boş bir parça listesi ürettiğini doğrular.
 def test_split_text_returns_empty_list_for_empty_text() -> None:
     assert split_text("") == []
 
 
+# Doküman parçalarına beklenen kimlik ve kaynak metadatasının eklendiğini doğrular.
 def test_chunk_documents_adds_expected_metadata() -> None:
     documents = [
         {

@@ -7,6 +7,7 @@ from chunking import chunk_documents
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
+# Dosyanın proje içindeki yolundan kararlı bir doküman kimliği üretir.
 def create_document_id(file_path: Path) -> str:
         relative_path = file_path.resolve().relative_to(PROJECT_ROOT)
         path_text = relative_path.as_posix()
@@ -18,6 +19,7 @@ def create_document_id(file_path: Path) -> str:
         return document_id[:16]
 
 
+# Dosya içeriğinin SHA-256 özetini hesaplar.
 def calculate_document_hash(file_path: Path) -> str:
     file_content = file_path.read_bytes()
 
@@ -25,7 +27,7 @@ def calculate_document_hash(file_path: Path) -> str:
 
     return document_hash
 
-#Metindeki fazla boşlukları ve boş satırları temizler
+# Metindeki fazla boşlukları ve boş satırları temizler.
 def clean_text(text: str) -> str:
     
     text = text.strip()
@@ -36,7 +38,6 @@ def clean_text(text: str) -> str:
 
 
 # PDF dosyasını sayfa sayfa okur.
-    
 def load_pdf(file_path: Path) -> list[dict]:
     
     pages = []
@@ -59,8 +60,7 @@ def load_pdf(file_path: Path) -> list[dict]:
 
     return pages
 
-# TXT ve MD dosyaları.
-    
+# TXT ve Markdown dosyasını tek bir doküman kaydı olarak yükler.
 def load_text_file(file_path: Path) -> list[dict]:
    
     text = file_path.read_text(encoding="utf-8")
@@ -74,7 +74,7 @@ def load_text_file(file_path: Path) -> list[dict]:
 
     return [document_data]
 
-# Dosya uzantı
+# Dosyayı uzantısına göre yükleyip kimlik ve içerik özetiyle zenginleştirir.
 def load_document(file_path: Path) -> list[dict]:
     extension = file_path.suffix.lower()
 
@@ -99,6 +99,7 @@ def load_document(file_path: Path) -> list[dict]:
 
 
 
+# Dokümanın mevcut indeks durumuna göre uygulanacak işlemi belirler.
 def determine_index_action(
     document: dict,
     indexed_documents: dict[str, str],

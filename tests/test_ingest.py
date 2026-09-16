@@ -11,6 +11,7 @@ from ingest import (
 )
 
 
+# Metin temizliğinin fazla boşlukları ve satır sonlarını normalleştirdiğini doğrular.
 def test_clean_text_normalizes_whitespace() -> None:
     text = "  Düzenli   uyku\n\n\nsağlıklıdır.  "
 
@@ -19,6 +20,7 @@ def test_clean_text_normalizes_whitespace() -> None:
     assert result == "Düzenli uyku\n\nsağlıklıdır."
 
 
+# Metin ve Markdown dosyalarının doğru doküman kaydına dönüştürüldüğünü doğrular.
 @pytest.mark.parametrize("extension", [".txt", ".md"])
 def test_load_text_document(
     tmp_path,
@@ -53,6 +55,7 @@ def test_load_text_document(
     ).hexdigest()
 
 
+# PDF dosyasının sayfa bazında ve ortak kimlikle yüklendiğini doğrular.
 def test_load_pdf_page_by_page(
     tmp_path,
     monkeypatch,
@@ -100,6 +103,7 @@ def test_load_pdf_page_by_page(
     )
 
 
+# Boş metin dosyasının geçerli boş içerikle işlendiğini doğrular.
 def test_empty_text_document_is_handled(
     tmp_path,
     monkeypatch,
@@ -119,6 +123,7 @@ def test_empty_text_document_is_handled(
     assert documents[0]["text"] == ""
 
 
+# Desteklenmeyen dosya uzantılarının reddedildiğini doğrular.
 def test_unsupported_extension_is_rejected(
     tmp_path,
 ) -> None:
@@ -132,6 +137,7 @@ def test_unsupported_extension_is_rejected(
         load_document(file_path)
 
 
+# Bulunmayan metin dosyasının hata oluşturduğunu doğrular.
 def test_missing_text_file_is_rejected(
     tmp_path,
 ) -> None:
@@ -141,6 +147,7 @@ def test_missing_text_file_is_rejected(
         load_document(file_path)
 
 
+# Bozuk PDF dosyasının hata oluşturduğunu doğrular.
 def test_corrupted_pdf_is_rejected(
     tmp_path,
 ) -> None:
@@ -151,6 +158,7 @@ def test_corrupted_pdf_is_rejected(
         load_document(file_path)
 
 
+# Doküman durumuna göre doğru indeks işleminin seçildiğini doğrular.
 @pytest.mark.parametrize(
     (
         "indexed_documents",

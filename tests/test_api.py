@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 import api
 
 
+# Sağlık kontrolleri için hazır bir sahte Qdrant istemcisi oluşturur.
 @pytest.fixture
 def qdrant_client() -> MagicMock:
     client = MagicMock()
@@ -13,6 +14,7 @@ def qdrant_client() -> MagicMock:
     return client
 
 
+# API testleri için bağımlılıkları ayarlanmış bir test istemcisi sağlar.
 @pytest.fixture
 def client(
     qdrant_client: MagicMock,
@@ -27,6 +29,7 @@ def client(
     test_client.close()
 
 
+# Kök uç noktanın API bağlantılarını döndürdüğünü doğrular.
 def test_root_endpoint(client: TestClient) -> None:
     response = client.get("/")
 
@@ -38,6 +41,7 @@ def test_root_endpoint(client: TestClient) -> None:
     }
 
 
+# Tüm bağımlılıklar hazırken sağlık uç noktasının başarılı olduğunu doğrular.
 def test_health_endpoint_is_ready(
     client: TestClient,
     qdrant_client: MagicMock,
@@ -66,6 +70,7 @@ def test_health_endpoint_is_ready(
     )
 
 
+# Qdrant koleksiyonu yokken sağlık uç noktasının 503 döndürdüğünü doğrular.
 def test_health_returns_503_when_collection_is_missing(
     client: TestClient,
     qdrant_client: MagicMock,
@@ -78,6 +83,7 @@ def test_health_returns_503_when_collection_is_missing(
     assert "collection hazır değil" in response.json()["detail"]
 
 
+# Qdrant'a ulaşılamadığında sağlık uç noktasının 503 döndürdüğünü doğrular.
 def test_health_returns_503_when_qdrant_is_unreachable(
     client: TestClient,
     qdrant_client: MagicMock,
@@ -94,6 +100,7 @@ def test_health_returns_503_when_qdrant_is_unreachable(
     )
 
 
+# Ollama modeli yokken sağlık uç noktasının 503 döndürdüğünü doğrular.
 def test_health_returns_503_when_ollama_model_is_missing(
     client: TestClient,
     monkeypatch,
@@ -112,6 +119,7 @@ def test_health_returns_503_when_ollama_model_is_missing(
     )
 
 
+# Doküman uç noktasının indeks özetini doğru döndürdüğünü doğrular.
 def test_documents_endpoint(
     client: TestClient,
     monkeypatch,
@@ -146,10 +154,12 @@ def test_documents_endpoint(
     }
 
 
+# Doküman listeleme hatasının 500 yanıtına dönüştürüldüğünü doğrular.
 def test_documents_returns_500_on_unexpected_error(
     client: TestClient,
     monkeypatch,
 ) -> None:
+    # Qdrant listeleme hatasını taklit eder.
     def raise_error(qdrant_client):
         raise RuntimeError("Qdrant hatası")
 
@@ -167,12 +177,14 @@ def test_documents_returns_500_on_unexpected_error(
     )
 
 
+# Soru uç noktalarının RAG cevabını beklenen biçimde döndürdüğünü doğrular.
 @pytest.mark.parametrize("endpoint", ["/query", "/ask"])
 def test_query_endpoint_returns_rag_answer(
     client: TestClient,
     monkeypatch,
     endpoint: str,
 ) -> None:
+    # RAG hattının başarılı örnek cevabını taklit eder.
     def fake_answer_question(**options):
         assert options["question"] == (
             "Uyku neden önemlidir?"
@@ -219,6 +231,7 @@ def test_query_endpoint_returns_rag_answer(
     assert data["generation_latency_ms"] == 1250.0
 
 
+# Boş veya yalnızca boşluk içeren soruların reddedildiğini doğrular.
 @pytest.mark.parametrize(
     "question",
     ["", "   "],
@@ -235,6 +248,7 @@ def test_query_rejects_blank_question(
     assert response.status_code == 422
 
 
+# Soru alanı bulunmayan isteklerin reddedildiğini doğrular.
 def test_query_rejects_missing_question(
     client: TestClient,
 ) -> None:
@@ -246,6 +260,7 @@ def test_query_rejects_missing_question(
     assert response.status_code == 422
 
 
+# Uzunluk sınırını aşan soruların reddedildiğini doğrular.
 def test_query_rejects_question_longer_than_limit(
     client: TestClient,
 ) -> None:
@@ -257,10 +272,12 @@ def test_query_rejects_question_longer_than_limit(
     assert response.status_code == 422
 
 
+# RAG doğrulama hatasının 400 yanıtına dönüştürüldüğünü doğrular.
 def test_query_returns_400_for_value_error(
     client: TestClient,
     monkeypatch,
 ) -> None:
+    # RAG doğrulama hatasını taklit eder.
     def raise_value_error(**options):
         raise ValueError("Geçersiz soru")
 
@@ -279,10 +296,12 @@ def test_query_returns_400_for_value_error(
     assert response.json()["detail"] == "Geçersiz soru"
 
 
+# Beklenmeyen RAG hatasının 500 yanıtına dönüştürüldüğünü doğrular.
 def test_query_returns_500_for_unexpected_error(
     client: TestClient,
     monkeypatch,
 ) -> None:
+    # Beklenmeyen RAG çalışma zamanı hatasını taklit eder.
     def raise_runtime_error(**options):
         raise RuntimeError("Beklenmeyen hata")
 
@@ -301,3 +320,14 @@ def test_query_returns_500_for_unexpected_error(
     assert "beklenmeyen" in (
         response.json()["detail"].lower()
     )
+
+def test_response_contains_total_latency_header(
+    client: TestClient,
+) -> None:
+    response = client.get("/")
+
+    assert response.status_code == 200
+    assert "x-process-time-ms" in response.headers
+    assert float(
+        response.headers["x-process-time-ms"]
+    ) >= 0

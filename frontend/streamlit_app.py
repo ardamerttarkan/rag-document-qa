@@ -20,6 +20,7 @@ st.caption(
 )
 
 
+# API sağlık durumunu döndürür veya bağlantı başarısızsa None verir.
 def get_api_health() -> dict | None:
     try:
         response = requests.get(

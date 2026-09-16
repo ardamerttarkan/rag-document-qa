@@ -60,6 +60,7 @@ CHUNK_SIZE = 500
 OVERLAP = 100
 
 
+# Arama sonuçlarını sorunun beklenen cevabına göre puanlar.
 def evaluate_results(results: list, item: dict) -> dict:
     if item.get("answerable", True):
         first_relevant_rank = find_first_relevant_rank(
@@ -85,6 +86,7 @@ def evaluate_results(results: list, item: dict) -> dict:
     }
 
 
+# Belirtilen retrieval yöntemi için toplu başarı ölçümlerini hesaplar.
 def build_summary(records: list[dict], method: str) -> dict:
     answerable_records = [
         record
@@ -143,6 +145,7 @@ def build_summary(records: list[dict], method: str) -> dict:
     return summary
 
 
+# Dense ve hibrit retrieval karşılaştırmasını Markdown raporuna yazar.
 def write_report(evaluation: dict) -> None:
     dense = evaluation["summary"]["dense"]
     hybrid = evaluation["summary"]["hybrid"]
@@ -175,6 +178,7 @@ Hybrid retrieval, anlamsal dense arama ile kelime tabanlı BM25 sonuçlarını R
     REPORT_PATH.write_text(report, encoding="utf-8")
 
 
+# Dense ve hibrit retrieval sonuçlarını terminalde karşılaştırmalı olarak gösterir.
 def print_comparison(evaluation: dict) -> None:
     dense = evaluation["summary"]["dense"]
     hybrid = evaluation["summary"]["hybrid"]
@@ -200,6 +204,7 @@ def print_comparison(evaluation: dict) -> None:
     print("Rapor dosyası:", REPORT_PATH)
 
 
+# Dense ve hibrit retrieval yöntemlerini veri kümesi üzerinde değerlendirir.
 def evaluate_hybrid() -> dict:
     dataset, questions = load_questions()
 

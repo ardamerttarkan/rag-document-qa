@@ -39,6 +39,7 @@ NO_ANSWER_SCORE_THRESHOLD = DEFAULT_SCORE_THRESHOLD
 TURKISH_CASE_MAP = str.maketrans({"I": "ı", "İ": "i"})
 
 
+# Değerlendirme veri kümesini yükleyip soru kayıtlarını doğrular.
 def load_questions() -> tuple[dict, list[dict]]:
     if not QUESTIONS_PATH.exists():
         raise FileNotFoundError(
@@ -93,11 +94,13 @@ def load_questions() -> tuple[dict, list[dict]]:
     return dataset, questions
 
 
+# Metni Türkçe karakterlere duyarlı karşılaştırma için normalleştirir.
 def normalize_text(value: object) -> str:
     text = str(value).translate(TURKISH_CASE_MAP).casefold()
     return re.sub(r"\s+", " ", text).strip()
 
 
+# Bir sonucun beklenen doküman, sayfa ve içeriği karşılayıp karşılamadığını belirler.
 def matches_expected_content(payload: dict, item: dict) -> bool:
     actual_document = Path(
         str(payload.get("document_name", ""))
@@ -122,6 +125,7 @@ def matches_expected_content(payload: dict, item: dict) -> bool:
     )
 
 
+# İlk ilgili arama sonucunun bir tabanlı sırasını bulur.
 def find_first_relevant_rank(results: list, item: dict) -> int | None:
     for rank, result in enumerate(results, start=1):
         payload = result.payload or {}
@@ -132,6 +136,7 @@ def find_first_relevant_rank(results: list, item: dict) -> int | None:
     return None
 
 
+# Arama sonuçlarını JSON ile uyumlu sözlüklere dönüştürür.
 def serialize_results(results: list) -> list[dict]:
     serialized = []
 
@@ -152,10 +157,12 @@ def serialize_results(results: list) -> list[dict]:
     return serialized
 
 
+# Sayısal değerlerin ortalamasını güvenli biçimde hesaplar.
 def calculate_average(values: list[float]) -> float:
     return round(mean(values), 3) if values else 0.0
 
 
+# Retrieval sistemini değerlendirme soruları üzerinde çalıştırıp ölçümleri üretir.
 def evaluate() -> dict:
     dataset, questions = load_questions()
 
@@ -338,6 +345,7 @@ def evaluate() -> dict:
     return evaluation
 
 
+# Retrieval değerlendirmesinin özet ölçümlerini terminalde gösterir.
 def print_summary(evaluation: dict) -> None:
     summary = evaluation["summary"]
 

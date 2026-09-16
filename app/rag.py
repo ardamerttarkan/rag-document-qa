@@ -20,6 +20,7 @@ NO_RESULT_ANSWER = (
 )
 
 
+# Arama sonuçlarını kaynak numaralı LLM bağlamına dönüştürür.
 def build_context(results: list) -> str:
     context_parts = []
 
@@ -54,6 +55,7 @@ def build_context(results: list) -> str:
     return "\n\n".join(context_parts)
 
 
+# Arama sonuçlarından API yanıtında kullanılacak kaynak kayıtlarını oluşturur.
 def build_sources(results: list) -> list[dict]:
     sources = []
 
@@ -75,6 +77,7 @@ def build_sources(results: list) -> list[dict]:
     return sources
 
 
+# Soruyu arama ve üretim aşamalarından geçirerek kaynaklı bir cevap oluşturur.
 def answer_question(
     question: str,
     embedding_model,

@@ -11,19 +11,23 @@ from vector_store import COLLECTION_NAME
 
 
 class FakeVector:
+    # Sahte vektörü verilen değerlerle başlatır.
     def __init__(self, values: list[float]):
         self.values = values
 
+    # Sahte vektör değerlerini liste olarak döndürür.
     def tolist(self) -> list[float]:
         return self.values
 
 
 class FakeModel:
+    # Sahte modeli döndüreceği vektör değerleriyle başlatır.
     def __init__(self, values: list[float]):
         self.values = values
         self.received_text = None
         self.received_options = None
 
+    # Kodlama çağrısını kaydedip yapılandırılmış sahte vektörü döndürür.
     def encode(self, text: str, **options):
         self.received_text = text
         self.received_options = options
@@ -32,16 +36,19 @@ class FakeModel:
 
 
 class FakeQdrantClient:
+    # Sahte Qdrant istemcisini döndüreceği noktalarla başlatır.
     def __init__(self, points: list):
         self.points = points
         self.received_options = None
 
+    # Arama seçeneklerini kaydedip sahte sorgu sonuçlarını döndürür.
     def query_points(self, **options):
         self.received_options = options
 
         return SimpleNamespace(points=self.points)
 
 
+# Sorgu embedding işleminin doğru önek ve seçenekleri kullandığını doğrular.
 def test_embed_query_uses_expected_prefix_and_options() -> None:
     model = FakeModel(
         [0.0] * EMBEDDING_DIMENSION
@@ -63,6 +70,7 @@ def test_embed_query_uses_expected_prefix_and_options() -> None:
     }
 
 
+# Boş sorguların embedding öncesinde reddedildiğini doğrular.
 @pytest.mark.parametrize(
     "query",
     ["", "   ", "\n\t"],
@@ -84,6 +92,7 @@ def test_embed_query_rejects_blank_query(
         )
 
 
+# Yanlış boyuttaki sorgu vektörünün reddedildiğini doğrular.
 def test_embed_query_rejects_wrong_dimension() -> None:
     model = FakeModel([0.0] * 10)
 
@@ -97,6 +106,7 @@ def test_embed_query_rejects_wrong_dimension() -> None:
         )
 
 
+# Sonlu olmayan vektör değerlerinin reddedildiğini doğrular.
 @pytest.mark.parametrize(
     "invalid_value",
     [float("nan"), float("inf")],
@@ -119,6 +129,7 @@ def test_embed_query_rejects_non_finite_values(
         )
 
 
+# Benzerlik aramasının Qdrant'ı doğru seçeneklerle çağırdığını doğrular.
 def test_search_similar_chunks_calls_qdrant() -> None:
     expected_points = [
         SimpleNamespace(
@@ -148,6 +159,7 @@ def test_search_similar_chunks_calls_qdrant() -> None:
     }
 
 
+# Geçersiz Top-K değerlerinin reddedildiğini doğrular.
 @pytest.mark.parametrize("top_k", [0, -1])
 def test_search_rejects_invalid_top_k(
     top_k: int,
@@ -167,6 +179,7 @@ def test_search_rejects_invalid_top_k(
         )
 
 
+# Geçersiz benzerlik eşiklerinin reddedildiğini doğrular.
 @pytest.mark.parametrize(
     "score_threshold",
     [-1.01, 1.01],
@@ -189,6 +202,7 @@ def test_search_rejects_invalid_threshold(
         )
 
 
+# Yanlış boyuttaki arama vektörünün reddedildiğini doğrular.
 def test_search_rejects_wrong_vector_dimension() -> None:
     client = FakeQdrantClient([])
 

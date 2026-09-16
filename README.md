@@ -335,3 +335,7 @@ Reranker ilk sıra doğruluğunu artırmış ancak Recall@3 ve Recall@5 sonuçla
 ## 16. Gün – Otomatik Testler
 
 Pytest kullanılarak chunking, doküman yükleme, retrieval ve FastAPI endpointleri için otomatik testler hazırlandı. Boş sorgu, geçersiz parametre, bozuk veya desteklenmeyen dosya ve servis hataları gibi uç durumlar test edildi. Qdrant, Ollama ve embedding modeli mock yapılarla izole edilerek toplam 47 test başarıyla tamamlandı.
+
+## 17. Gün – Performans ve Gözlemlenebilirlik
+
+API isteklerinin toplam işlem süresini ölçen middleware eklendi; retrieval, generation ve toplam latency değerleri ayrı olarak izlenebilir hâle getirildi. Gerçek API üzerinden beş soruluk performans testi gerçekleştirilerek %100 başarı oranı, ortalama 84,13 ms retrieval ve 6,9 saniye generation süresi ölçüldü. Sonuçlar JSON raporuna kaydedildi ve validation ile hata logları doğrulandı.
