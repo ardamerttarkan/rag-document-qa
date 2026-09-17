@@ -1,8 +1,12 @@
 import requests
 import streamlit as st
+from os import getenv
 
 
-API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = getenv(
+    "API_BASE_URL",
+    "http://127.0.0.1:8000",
+)
 REQUEST_TIMEOUT_SECONDS = 10
 QUERY_TIMEOUT_SECONDS = 120
 

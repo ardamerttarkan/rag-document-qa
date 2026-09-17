@@ -1,6 +1,21 @@
+from os import getenv
+
 import ollama
 
 
+MODEL_NAME = getenv(
+    "OLLAMA_MODEL",
+    "qwen3:4b-instruct",
+)
+
+OLLAMA_HOST = getenv(
+    "OLLAMA_HOST",
+    "http://localhost:11434",
+)
+
+ollama_client = ollama.Client(
+    host=OLLAMA_HOST,
+)
 
 MODEL_NAME = "qwen3:4b-instruct"
 
@@ -30,7 +45,7 @@ Kurallar:
 def is_model_available(
     model_name: str = MODEL_NAME,
 ) -> bool:
-    response = ollama.list()
+    response = ollama_client.list()
 
     installed_models = {
         model.model
@@ -67,7 +82,7 @@ SORU:
 {cleaned_question}
 """.strip()
 
-    response = ollama.chat(
+    response = ollama_client.chat(
         model=MODEL_NAME,
         messages=[
             {

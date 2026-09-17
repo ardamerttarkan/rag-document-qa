@@ -339,3 +339,7 @@ Pytest kullanılarak chunking, doküman yükleme, retrieval ve FastAPI endpointl
 ## 17. Gün – Performans ve Gözlemlenebilirlik
 
 API isteklerinin toplam işlem süresini ölçen middleware eklendi; retrieval, generation ve toplam latency değerleri ayrı olarak izlenebilir hâle getirildi. Gerçek API üzerinden beş soruluk performans testi gerçekleştirilerek %100 başarı oranı, ortalama 84,13 ms retrieval ve 6,9 saniye generation süresi ölçüldü. Sonuçlar JSON raporuna kaydedildi ve validation ile hata logları doğrulandı.
+
+## 18. Gün – Docker ile Konteynerleştirme
+
+Projenin FastAPI, Streamlit, Qdrant, Ollama ve doküman indeksleme bileşenleri Docker Compose ile konteynerleştirildi. Servisler için ortam değişkenleri, kalıcı volume’ler, sağlık kontrolleri ve başlatma bağımlılıkları tanımlandı. Sistem temiz ortamdan tek komutla çalıştırılarak yeniden başlatma ve uçtan uca soru-cevap testleri başarıyla tamamlandı.

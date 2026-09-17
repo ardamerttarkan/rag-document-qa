@@ -1,6 +1,6 @@
 services:
   qdrant:
-    image: qdrant/qdrant:latest
+    image: qdrant/qdrant:v1.19.0
     container_name: qdrant
     restart: unless-stopped
     ports:
@@ -8,6 +8,122 @@ services:
       - "6334:6334"
     volumes:
       - qdrant_storage:/qdrant/storage
+    healthcheck:
+      test:
+        - CMD
+        - bash
+        - -c
+        - ":> /dev/tcp/127.0.0.1/6333"
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+  ollama:
+    image: ollama/ollama:0.33.2
+    restart: unless-stopped
+    volumes:
+      - ollama_storage:/root/.ollama
+    healthcheck:
+      test:
+        - CMD
+        - ollama
+        - list
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+
+  ollama-init:
+    image: ollama/ollama:0.33.2
+    restart: "no"
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen3:4b-instruct}
+    depends_on:
+      ollama:
+        condition: service_healthy
+    entrypoint:
+      - /bin/sh
+      - -c
+    command:
+      - ollama pull "$${OLLAMA_MODEL}"
+
+  indexer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: "no"
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: ${QDRANT_COLLECTION:-rag_documents}
+      HF_HOME: /cache/huggingface
+    volumes:
+      - huggingface_cache:/cache/huggingface
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    command:
+      - python
+      - app/vector_store.py
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: ${QDRANT_COLLECTION:-rag_documents}
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen3:4b-instruct}
+      HF_HOME: /cache/huggingface
+    ports:
+      - "8000:8000"
+    volumes:
+      - huggingface_cache:/cache/huggingface
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      ollama-init:
+        condition: service_completed_successfully
+      indexer:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=10)"
+      interval: 15s
+      timeout: 12s
+      retries: 20
+      start_period: 30s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    restart: unless-stopped
+    environment:
+      API_BASE_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=5)"
+      interval: 15s
+      timeout: 7s
+      retries: 20
+      start_period: 15s
 
 volumes:
   qdrant_storage:
+  ollama_storage:
+  huggingface_cache:

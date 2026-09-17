@@ -1,3 +1,4 @@
+from os import getenv
 from uuid import NAMESPACE_URL, uuid5
 
 from qdrant_client import QdrantClient, models
@@ -16,8 +17,15 @@ from ingest import (
 
 
 
-QDRANT_URL = "http://localhost:6333"
-COLLECTION_NAME = "rag_documents"
+QDRANT_URL = getenv(
+    "QDRANT_URL",
+    "http://localhost:6333",
+)
+
+COLLECTION_NAME = getenv(
+    "QDRANT_COLLECTION",
+    "rag_documents",
+)
 EMBEDDING_DIMENSION = 384
 
 
